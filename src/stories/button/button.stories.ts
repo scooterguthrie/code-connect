@@ -5,15 +5,9 @@ import { ButtonComponent } from './button.component';
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories
 const meta: Meta<ButtonComponent> = {
-  title: 'Example/Button',
+  title: 'Atoms/Button',
   component: ButtonComponent,
   tags: ['autodocs'],
-  argTypes: {
-    backgroundColor: {
-      control: 'color',
-    },
-  },
-  // Use `fn` to spy on the onClick arg, which will appear in the actions panel once invoked: https://storybook.js.org/docs/essentials/actions#action-args
   args: { onClick: fn() },
 };
 
@@ -23,27 +17,33 @@ type Story = StoryObj<ButtonComponent>;
 // More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
 export const Primary: Story = {
   args: {
-    primary: true,
     label: 'Button',
+    rank: 'primary',
+    outline: false,
+    type: 'button',
+    size: 'md',
+    disabled: false,
+    inProgress: false,
   },
 };
 
 export const Secondary: Story = {
   args: {
     label: 'Button',
+    rank: 'secondary',
   },
 };
 
 export const Large: Story = {
   args: {
-    size: 'large',
     label: 'Button',
+    size: 'lg',
   },
 };
 
 export const Small: Story = {
   args: {
-    size: 'small',
     label: 'Button',
+    size: 'sm',
   },
 };
