@@ -64,7 +64,7 @@
         },
         {
             "name": "ButtonComponent",
-            "id": "component-ButtonComponent-3b4ecfb9b0707e8d199f95b12d3af01148601e922214d8d3ad17b6bda7f1180cca4b4da2844b8698fee969beac4132553314e00fb1482f02a111bef338ceeaac",
+            "id": "component-ButtonComponent-31f9ae79ae905437adbfd9b91a743fdd4ec82b7ab8ccfd9453b511a1c00444bbe108ecabff2303fed2c9eab3ec87f128e6c09d8913e4cc10c0fe03b1d65667fb",
             "file": "src/stories/button/button.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -111,7 +111,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "line": 12,
-                    "type": "",
+                    "type": "\"Button\" | string",
                     "decorators": []
                 },
                 {
@@ -177,7 +177,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { CommonModule } from '@angular/common';\r\nimport { Component, Input, Output, EventEmitter } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'storybook-button',\r\n  standalone: true,\r\n  imports: [CommonModule],\r\n  templateUrl: './button.component.html',\r\n  styleUrl: './button.component.scss'\r\n})\r\nexport class ButtonComponent {\r\n  @Input() label!: 'Button';\r\n  @Input() type: 'button' | 'submit' | 'reset' = 'button';\r\n  @Input() rank: 'primary' | 'secondary' | 'success' | 'danger' | 'warning' | 'info' | 'light' | 'dark' | 'link' = 'primary';\r\n  @Input() outline = false;\r\n  @Input() size: 'sm' | 'md' | 'lg' = 'md';\r\n  @Input() disabled=false;\r\n  @Input() iconLeft!: '3d_rotation' | 'accessibility' | 'accessibility_new' | 'accessible' | 'accessible_forward' | 'account_box' | 'account_child';\r\n  @Input() inProgress=false;\r\n  \r\n  @Output() onClick = new EventEmitter<Event>();\r\n\r\n  public get classes(): string[] {\r\n    let outlineString = '';\r\n    let disabledString = ''\r\n    if (this.outline) {\r\n      outlineString = 'outline-'\r\n    }\r\n    if (this.disabled || this.inProgress) {\r\n      disabledString = 'disabled'\r\n    }\r\n    return ['btn', `btn-` + `${outlineString}` + `${this.rank}`, `btn-${this.size}`, `${disabledString}`];\r\n  }\r\n}\r\n",
+            "sourceCode": "import { CommonModule } from '@angular/common';\r\nimport { Component, Input, Output, EventEmitter } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'storybook-button',\r\n  standalone: true,\r\n  imports: [CommonModule],\r\n  templateUrl: './button.component.html',\r\n  styleUrl: './button.component.scss'\r\n})\r\nexport class ButtonComponent {\r\n  @Input() label!: 'Button' | string;\r\n  @Input() type: 'button' | 'submit' | 'reset' = 'button';\r\n  @Input() rank: 'primary' | 'secondary' | 'success' | 'danger' | 'warning' | 'info' | 'light' | 'dark' | 'link' = 'primary';\r\n  @Input() outline = false;\r\n  @Input() size: 'sm' | 'md' | 'lg' = 'md';\r\n  @Input() disabled=false;\r\n  @Input() iconLeft!: '3d_rotation' | 'accessibility' | 'accessibility_new' | 'accessible' | 'accessible_forward' | 'account_box' | 'account_child';\r\n  @Input() inProgress=false;\r\n  \r\n  @Output() onClick = new EventEmitter<Event>();\r\n\r\n  public get classes(): string[] {\r\n    let outlineString = '';\r\n    let disabledString = ''\r\n    if (this.outline) {\r\n      outlineString = 'outline-'\r\n    }\r\n    if (this.disabled || this.inProgress) {\r\n      disabledString = 'disabled'\r\n    }\r\n    return ['btn', `btn-` + `${outlineString}` + `${this.rank}`, `btn-${this.size}`, `${disabledString}`];\r\n  }\r\n}\r\n",
             "styleUrl": "./button.component.scss",
             "assetsDirs": [],
             "styleUrlsData": "",
