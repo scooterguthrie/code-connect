@@ -1,0 +1,9 @@
+{
+  "codeConnect": {
+    "include": ["src/stories/**"],
+    "exclude": [],
+    "parser": "html",
+    "label": "Angular",
+    "interactiveSetupFigmaFileUrl": "https://www.figma.com/design/yaQVpEFfD6ASpm0Pii5DXY/Labcorp-Bootstrap-v4"
+  }
+}
