@@ -64,7 +64,7 @@
         },
         {
             "name": "ButtonComponent",
-            "id": "component-ButtonComponent-31f9ae79ae905437adbfd9b91a743fdd4ec82b7ab8ccfd9453b511a1c00444bbe108ecabff2303fed2c9eab3ec87f128e6c09d8913e4cc10c0fe03b1d65667fb",
+            "id": "component-ButtonComponent-117612debb68d2b5528aea3ea54c0cf10c5e17f0c50cadd34da6a760a75a54c41123d6f9cd796a640aaa294384c1996417145f0addfbed3497cdc5b5438ae087",
             "file": "src/stories/button/button.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -90,28 +90,21 @@
                     "decorators": []
                 },
                 {
-                    "name": "iconLeft",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "line": 18,
-                    "type": "\"3d_rotation\" | \"accessibility\" | \"accessibility_new\" | \"accessible\" | \"accessible_forward\" | \"account_box\" | \"account_child\"",
-                    "decorators": []
-                },
-                {
                     "name": "inProgress",
                     "defaultValue": "false",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 19,
+                    "line": 18,
                     "type": "boolean",
                     "decorators": []
                 },
                 {
                     "name": "label",
+                    "defaultValue": "'Button'",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "line": 12,
-                    "type": "\"Button\" | string",
+                    "type": "string",
                     "decorators": []
                 },
                 {
@@ -157,7 +150,7 @@
                     "defaultValue": "new EventEmitter<Event>()",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 21,
+                    "line": 20,
                     "type": "EventEmitter"
                 }
             ],
@@ -177,7 +170,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { CommonModule } from '@angular/common';\r\nimport { Component, Input, Output, EventEmitter } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'storybook-button',\r\n  standalone: true,\r\n  imports: [CommonModule],\r\n  templateUrl: './button.component.html',\r\n  styleUrl: './button.component.scss'\r\n})\r\nexport class ButtonComponent {\r\n  @Input() label!: 'Button' | string;\r\n  @Input() type: 'button' | 'submit' | 'reset' = 'button';\r\n  @Input() rank: 'primary' | 'secondary' | 'success' | 'danger' | 'warning' | 'info' | 'light' | 'dark' | 'link' = 'primary';\r\n  @Input() outline = false;\r\n  @Input() size: 'sm' | 'md' | 'lg' = 'md';\r\n  @Input() disabled=false;\r\n  @Input() iconLeft!: '3d_rotation' | 'accessibility' | 'accessibility_new' | 'accessible' | 'accessible_forward' | 'account_box' | 'account_child';\r\n  @Input() inProgress=false;\r\n  \r\n  @Output() onClick = new EventEmitter<Event>();\r\n\r\n  public get classes(): string[] {\r\n    let outlineString = '';\r\n    let disabledString = ''\r\n    if (this.outline) {\r\n      outlineString = 'outline-'\r\n    }\r\n    if (this.disabled || this.inProgress) {\r\n      disabledString = 'disabled'\r\n    }\r\n    return ['btn', `btn-` + `${outlineString}` + `${this.rank}`, `btn-${this.size}`, `${disabledString}`];\r\n  }\r\n}\r\n",
+            "sourceCode": "import { CommonModule } from '@angular/common';\r\nimport { Component, Input, Output, EventEmitter } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'storybook-button',\r\n  standalone: true,\r\n  imports: [CommonModule],\r\n  templateUrl: './button.component.html',\r\n  styleUrl: './button.component.scss'\r\n})\r\nexport class ButtonComponent {\r\n  @Input() label = 'Button';\r\n  @Input() type: 'button' | 'submit' | 'reset' = 'button';\r\n  @Input() rank: 'primary' | 'secondary' | 'success' | 'danger' | 'warning' | 'info' | 'light' | 'dark' | 'link' = 'primary';\r\n  @Input() outline = false;\r\n  @Input() size: 'sm' | 'md' | 'lg' = 'md';\r\n  @Input() disabled=false;\r\n  @Input() inProgress=false;\r\n  \r\n  @Output() onClick = new EventEmitter<Event>();\r\n\r\n  public get classes(): string[] {\r\n    let outlineString = '';\r\n    let disabledString = ''\r\n    if (this.outline) {\r\n      outlineString = 'outline-'\r\n    }\r\n    if (this.disabled || this.inProgress) {\r\n      disabledString = 'disabled'\r\n    }\r\n    return ['btn', `btn-` + `${outlineString}` + `${this.rank}`, `btn-${this.size}`, `${disabledString}`];\r\n  }\r\n}\r\n",
             "styleUrl": "./button.component.scss",
             "assetsDirs": [],
             "styleUrlsData": "",
@@ -190,11 +183,11 @@
                         "name": "classes",
                         "type": "[]",
                         "returnType": "string[]",
-                        "line": 23
+                        "line": 22
                     }
                 }
             },
-            "templateData": "<button\r\n  (click)=\"onClick.emit($event)\"\r\n  [ngClass]=\"classes\"\r\n  [type]=\"type\"\r\n  [attr.aria-disabled]='disabled || inProgress'\r\n>\r\n  <span\r\n    *ngIf=\"inProgress\"\r\n    class=\"spinner-border spinner-border-sm me-1\"\r\n    role=\"status\"\r\n    aria-hidden=\"true\"\r\n  ></span>\r\n  <span\r\n    *ngIf=\"iconLeft\"\r\n    [ngClass]=\"{\r\n      'material-symbols-rounded': true,\r\n      'icon-sm': size === 'sm',\r\n      'icon-lg': size === 'lg',\r\n      'me-1': label.length > 0\r\n    }\"\r\n    aria-hidden=\"true\"\r\n  >{{iconLeft}}</span>\r\n  <span>{{label}}</span>\r\n</button>\r\n"
+            "templateData": "<button\r\n  (click)=\"onClick.emit($event)\"\r\n  [ngClass]=\"classes\"\r\n  [type]=\"type\"\r\n  [attr.aria-disabled]='disabled || inProgress'\r\n>\r\n  <span\r\n    *ngIf=\"inProgress\"\r\n    class=\"spinner-border spinner-border-sm me-1\"\r\n    role=\"status\"\r\n    aria-hidden=\"true\"\r\n  ></span>\r\n  <span>{{label}}</span>\r\n</button>\r\n"
         }
     ],
     "modules": [],
@@ -262,7 +255,7 @@
                 "linktype": "component",
                 "name": "ButtonComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/10",
+                "coverageCount": "0/9",
                 "status": "low"
             }
         ]
