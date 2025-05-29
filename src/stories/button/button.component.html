@@ -10,15 +10,5 @@
     role="status"
     aria-hidden="true"
   ></span>
-  <span
-    *ngIf="iconLeft"
-    [ngClass]="{
-      'material-symbols-rounded': true,
-      'icon-sm': size === 'sm',
-      'icon-lg': size === 'lg',
-      'me-1': label.length > 0
-    }"
-    aria-hidden="true"
-  >{{iconLeft}}</span>
   <span>{{label}}</span>
 </button>

@@ -9,13 +9,12 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
   styleUrl: './button.component.scss'
 })
 export class ButtonComponent {
-  @Input() label!: 'Button' | string;
+  @Input() label = 'Button';
   @Input() type: 'button' | 'submit' | 'reset' = 'button';
   @Input() rank: 'primary' | 'secondary' | 'success' | 'danger' | 'warning' | 'info' | 'light' | 'dark' | 'link' = 'primary';
   @Input() outline = false;
   @Input() size: 'sm' | 'md' | 'lg' = 'md';
   @Input() disabled=false;
-  @Input() iconLeft!: '3d_rotation' | 'accessibility' | 'accessibility_new' | 'accessible' | 'accessible_forward' | 'account_box' | 'account_child';
   @Input() inProgress=false;
   
   @Output() onClick = new EventEmitter<Event>();
