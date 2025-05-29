@@ -1,0 +1,14 @@
+<button
+  (click)="onClick.emit($event)"
+  [ngClass]="classes"
+  [type]="type"
+  [attr.aria-disabled]='disabled || inProgress'
+>
+  <span
+    *ngIf="inProgress"
+    class="spinner-border spinner-border-sm me-1"
+    role="status"
+    aria-hidden="true"
+  ></span>
+  <span>{{label}}</span>
+</button>

@@ -1,0 +1,263 @@
+{
+    "pipes": [],
+    "interfaces": [],
+    "injectables": [],
+    "guards": [],
+    "interceptors": [],
+    "classes": [],
+    "directives": [],
+    "components": [
+        {
+            "name": "AppComponent",
+            "id": "component-AppComponent-f2af76c13024c7a46677e344db74efb81ecd3123603cf8180cb96c7a000a2353663861d6cd4a03f37960b061245c4a75fa90f9500490208f30f4d9b50158c60f",
+            "file": "src/app/app.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-root",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "./app.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "title",
+                    "defaultValue": "'code-connect'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 12
+                }
+            ],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": false,
+            "imports": [
+                {
+                    "name": "ButtonComponent",
+                    "type": "component"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component } from '@angular/core';\n//import { RouterOutlet } from '@angular/router';\nimport { ButtonComponent } from '../stories/button/button.component';\n\n@Component({\n  selector: 'app-root',\n  imports: [ButtonComponent ],\n  templateUrl: './app.component.html',\n  styleUrl: './app.component.scss'\n})\nexport class AppComponent {\n  title = 'code-connect';\n}\n",
+            "styleUrl": "./app.component.scss",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": [],
+            "templateData": "<div class=\"container-xxl\">\n  <h1>Storybook Code Connect Test</h1>\n  <h2>Button Component</h2>\n  <storybook-button></storybook-button>\n</div>\n"
+        },
+        {
+            "name": "ButtonComponent",
+            "id": "component-ButtonComponent-abd4dcde364a45ed569b35a223c544ae2752e47a1937220c600a0e71f65297216975098ed4b71dfbb3bc50c8f1b5ab9417ed2abceed868e6ed1ed1f48bcdf568",
+            "file": "src/stories/button/button.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "storybook-button",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "./button.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "disabled",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 17,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "inProgress",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 18,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "label",
+                    "defaultValue": "'Button'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 12,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "outline",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 15,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "rank",
+                    "defaultValue": "'primary'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 14,
+                    "type": "\"primary\" | \"secondary\" | \"success\" | \"danger\" | \"warning\" | \"info\" | \"light\" | \"dark\" | \"link\"",
+                    "decorators": []
+                },
+                {
+                    "name": "size",
+                    "defaultValue": "'md'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 16,
+                    "type": "\"sm\" | \"md\" | \"lg\"",
+                    "decorators": []
+                },
+                {
+                    "name": "type",
+                    "defaultValue": "'button'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 13,
+                    "type": "\"button\" | \"submit\" | \"reset\"",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [
+                {
+                    "name": "onClick",
+                    "defaultValue": "new EventEmitter<Event>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 20,
+                    "type": "EventEmitter"
+                }
+            ],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [
+                {
+                    "name": "CommonModule",
+                    "type": "module"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { CommonModule } from '@angular/common';\nimport { Component, Input, Output, EventEmitter } from '@angular/core';\n\n@Component({\n  selector: 'storybook-button',\n  standalone: true,\n  imports: [CommonModule],\n  templateUrl: './button.component.html',\n  styleUrl: './button.component.scss'\n})\nexport class ButtonComponent {\n  @Input() label = 'Button';\n  @Input() type: 'button' | 'submit' | 'reset' = 'button';\n  @Input() rank: 'primary' | 'secondary' | 'success' | 'danger' | 'warning' | 'info' | 'light' | 'dark' | 'link' = 'primary';\n  @Input() outline = false;\n  @Input() size: 'sm' | 'md' | 'lg' = 'md';\n  @Input() disabled=false;\n  @Input() inProgress=false;\n  \n  @Output() onClick = new EventEmitter<Event>();\n\n  public get classes(): string[] {\n    let outlineString = '';\n    let disabledString = ''\n    if (this.outline) {\n      outlineString = 'outline-'\n    }\n    if (this.disabled || this.inProgress) {\n      disabledString = 'disabled'\n    }\n    return ['btn', `btn-` + `${outlineString}` + `${this.rank}`, `btn-${this.size}`, `${disabledString}`];\n  }\n}\n",
+            "styleUrl": "./button.component.scss",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": [],
+            "accessors": {
+                "classes": {
+                    "name": "classes",
+                    "getSignature": {
+                        "name": "classes",
+                        "type": "[]",
+                        "returnType": "string[]",
+                        "line": 22
+                    }
+                }
+            },
+            "templateData": "<button\n  (click)=\"onClick.emit($event)\"\n  [ngClass]=\"classes\"\n  [type]=\"type\"\n  [attr.aria-disabled]='disabled || inProgress'\n>\n  <span\n    *ngIf=\"inProgress\"\n    class=\"spinner-border spinner-border-sm me-1\"\n    role=\"status\"\n    aria-hidden=\"true\"\n  ></span>\n  <span>{{label}}</span>\n</button>\n"
+        }
+    ],
+    "modules": [],
+    "miscellaneous": {
+        "variables": [
+            {
+                "name": "appConfig",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/app.config.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "ApplicationConfig",
+                "defaultValue": "{\n  providers: [provideZoneChangeDetection({ eventCoalescing: true }), provideRouter(routes)]\n}"
+            }
+        ],
+        "functions": [],
+        "typealiases": [],
+        "enumerations": [],
+        "groupedVariables": {
+            "src/app/app.config.ts": [
+                {
+                    "name": "appConfig",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/app.config.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "ApplicationConfig",
+                    "defaultValue": "{\n  providers: [provideZoneChangeDetection({ eventCoalescing: true }), provideRouter(routes)]\n}"
+                }
+            ]
+        },
+        "groupedFunctions": {},
+        "groupedEnumerations": {},
+        "groupedTypeAliases": {}
+    },
+    "routes": [],
+    "coverage": {
+        "count": 0,
+        "status": "low",
+        "files": [
+            {
+                "filePath": "src/app/app.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "AppComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/2",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/app.config.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "appConfig",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/button/button.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "ButtonComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/9",
+                "status": "low"
+            }
+        ]
+    }
+}
