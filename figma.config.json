@@ -10,7 +10,7 @@
       "components": ["src/components"]
     },
     "documentUrlSubstitutions": {
-      "<FIGMA_BUTTONS_BUTTONS>": "https://www.figma.com/design/yaQVpEFfD6ASpm0Pii5DXY/Labcorp-Bootstrap-v4?node-id=130-8098"
+      "<FIGMA_BUTTONS_BUTTONS>": "https://www.figma.com/design/yaQVpEFfD6ASpm0Pii5DXY/Labcorp-Bootstrap-v4?m=auto&node-id=130-8098"
     }
   }
 }
