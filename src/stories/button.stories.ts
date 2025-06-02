@@ -18,7 +18,7 @@ type Story = StoryObj<ButtonComponent>;
 export const Primary: Story = {
   args: {
     label: 'Button',
-    rank: 'primary',
+    variant: 'primary',
     outline: false,
     type: 'button',
     size: 'md',
@@ -30,7 +30,7 @@ export const Primary: Story = {
 export const Secondary: Story = {
   args: {
     label: 'Button',
-    rank: 'secondary',
+    variant: 'secondary',
   },
 };
 
