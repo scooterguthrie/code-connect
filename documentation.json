@@ -60,18 +60,18 @@
             "styleUrlsData": "",
             "stylesData": "",
             "extends": [],
-            "templateData": "<div class=\"container-xxl\">\r\n  <h1>Storybook Code Connect Test</h1>\r\n  <h2>Button Component</h2>\r\n  <storybook-button></storybook-button>\r\n</div>\r\n"
+            "templateData": "<div class=\"container-xxl\">\r\n  <h1>Storybook Code Connect Test</h1>\r\n  <h2>Button Component</h2>\r\n  <div class=\"d-grid gap-3 d-md-flex\">\r\n    <bs-button label=\"Component Button 01\"></bs-button>\r\n    <bs-button\r\n      label=\"Component Button 02\"\r\n      type=\"button\"\r\n      variant=\"primary\"\r\n      state=\"default\"\r\n      size=\"md\"\r\n    ></bs-button>\r\n    <button class=\"btn btn-primary\" type=\"button\">Button 01</button>\r\n    <button class=\"btn btn-primary\" type=\"button\">Button 02</button>\r\n  </div>\r\n</div>\r\n"
         },
         {
             "name": "ButtonComponent",
-            "id": "component-ButtonComponent-117612debb68d2b5528aea3ea54c0cf10c5e17f0c50cadd34da6a760a75a54c41123d6f9cd796a640aaa294384c1996417145f0addfbed3497cdc5b5438ae087",
+            "id": "component-ButtonComponent-e2fae67cbf2ac28dffbc88eb010aea275ed03b3bb211cf9931a51c48d19ecfb7924413f3ef60380b9d712f3b7a775004b622329350de9b0ac510e32e85975e23",
             "file": "src/components/button/button.component.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
             "outputs": [],
             "providers": [],
-            "selector": "storybook-button",
+            "selector": "bs-button",
             "styleUrls": [],
             "styles": [],
             "templateUrl": [
@@ -117,15 +117,6 @@
                     "decorators": []
                 },
                 {
-                    "name": "rank",
-                    "defaultValue": "'primary'",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "line": 14,
-                    "type": "\"primary\" | \"secondary\" | \"success\" | \"danger\" | \"warning\" | \"info\" | \"light\" | \"dark\" | \"link\"",
-                    "decorators": []
-                },
-                {
                     "name": "size",
                     "defaultValue": "'md'",
                     "deprecated": false,
@@ -141,6 +132,15 @@
                     "deprecationMessage": "",
                     "line": 13,
                     "type": "\"button\" | \"submit\" | \"reset\"",
+                    "decorators": []
+                },
+                {
+                    "name": "variant",
+                    "defaultValue": "'primary'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 14,
+                    "type": "\"primary\" | \"secondary\" | \"success\" | \"danger\" | \"warning\" | \"info\" | \"light\" | \"dark\" | \"link\"",
                     "decorators": []
                 }
             ],
@@ -170,7 +170,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { CommonModule } from '@angular/common';\r\nimport { Component, Input, Output, EventEmitter } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'storybook-button',\r\n  standalone: true,\r\n  imports: [CommonModule],\r\n  templateUrl: './button.component.html',\r\n  styleUrl: './button.component.scss'\r\n})\r\nexport class ButtonComponent {\r\n  @Input() label = 'Button';\r\n  @Input() type: 'button' | 'submit' | 'reset' = 'button';\r\n  @Input() rank: 'primary' | 'secondary' | 'success' | 'danger' | 'warning' | 'info' | 'light' | 'dark' | 'link' = 'primary';\r\n  @Input() outline = false;\r\n  @Input() size: 'sm' | 'md' | 'lg' = 'md';\r\n  @Input() disabled=false;\r\n  @Input() inProgress=false;\r\n  \r\n  @Output() onClick = new EventEmitter<Event>();\r\n\r\n  public get classes(): string[] {\r\n    let outlineString = '';\r\n    let disabledString = ''\r\n    if (this.outline) {\r\n      outlineString = 'outline-'\r\n    }\r\n    if (this.disabled || this.inProgress) {\r\n      disabledString = 'disabled'\r\n    }\r\n    return ['btn', `btn-` + `${outlineString}` + `${this.rank}`, `btn-${this.size}`, `${disabledString}`];\r\n  }\r\n}\r\n",
+            "sourceCode": "import { CommonModule } from '@angular/common';\r\nimport { Component, Input, Output, EventEmitter } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'bs-button',\r\n  standalone: true,\r\n  imports: [CommonModule],\r\n  templateUrl: './button.component.html',\r\n  styleUrl: './button.component.scss'\r\n})\r\nexport class ButtonComponent {\r\n  @Input() label = 'Button';\r\n  @Input() type: 'button' | 'submit' | 'reset' = 'button';\r\n  @Input() variant: 'primary' | 'secondary' | 'success' | 'danger' | 'warning' | 'info' | 'light' | 'dark' | 'link' = 'primary';\r\n  @Input() outline = false;\r\n  @Input() size: 'sm' | 'md' | 'lg' = 'md';\r\n  @Input() disabled=false;\r\n  @Input() inProgress=false;\r\n  \r\n  @Output() onClick = new EventEmitter<Event>();\r\n\r\n  public get classes(): string[] {\r\n    let outlineString = '';\r\n    let disabledString = ''\r\n    if (this.outline) {\r\n      outlineString = 'outline-'\r\n    }\r\n    if (this.disabled || this.inProgress) {\r\n      disabledString = 'disabled'\r\n    }\r\n    return ['btn', `btn-` + `${outlineString}` + `${this.variant}`, `btn-${this.size}`, `${disabledString}`];\r\n  }\r\n}\r\n",
             "styleUrl": "./button.component.scss",
             "assetsDirs": [],
             "styleUrlsData": "",
