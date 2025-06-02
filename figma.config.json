@@ -3,6 +3,7 @@
     "include": ["src/components/**/*", "src/figma/**/*"],
     "exclude": [],
     "parser": "html",
+    "label": "Angular",
     "importPaths": {
       "components/**/*": "components"
     },
