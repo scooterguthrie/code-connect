@@ -9,7 +9,7 @@ import figma, { html } from "@figma/code-connect/html"
  */
 
 figma.connect(
-  "https://www.figma.com/design/yaQVpEFfD6ASpm0Pii5DXY/Labcorp-Bootstrap-v4?node-id=130-8098",
+  "<FIGMA_BUTTONS_BUTTONS>",
   {
     props: {
       label: figma.boolean("Label"),
