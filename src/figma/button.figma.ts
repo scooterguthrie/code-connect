@@ -44,7 +44,7 @@ figma.connect(
         Disabled: "disabled",
       }),
     },
-    example: ({ state, label, type }) => html`\
-<storybook-button label=${label} state=${state} type=${type}></storybook-button>`,
+    example: ({ state, text, type }) => html`\
+<storybook-button text=${text} state=${state} type=${type}></storybook-button>`,
   },
 )
