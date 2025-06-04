@@ -1,12 +1,19 @@
 import { CommonModule } from '@angular/common';
 import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { IconComponent } from '../icon/icon.component';
+import { MaterialSymbol } from 'material-symbols';
 
 @Component({
-  selector: 'bs-button',
+  selector: '[bs-button]',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, IconComponent],
   templateUrl: './button.component.html',
-  styleUrl: './button.component.scss'
+  styleUrl: './button.component.scss',
+  host: {
+    '[class]': 'classes',
+    '[type]': 'type',
+    '[attr.aria-disabled]': 'disabled || inProgress'
+  },
 })
 export class ButtonComponent {
   @Input() label = 'Button';
@@ -16,12 +23,14 @@ export class ButtonComponent {
   @Input() size: 'sm' | 'md' | 'lg' = 'md';
   @Input() disabled=false;
   @Input() inProgress=false;
+  // @Input() iconStart: null | MaterialSymbol = null;
+  // @Input() iconEnd: null | MaterialSymbol = null;
   
   @Output() onClick = new EventEmitter<Event>();
 
   public get classes(): string[] {
     let outlineString = '';
-    let disabledString = ''
+    let disabledString = '';
     if (this.outline) {
       outlineString = 'outline-'
     }
