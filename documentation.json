@@ -9,7 +9,7 @@
     "components": [
         {
             "name": "AppComponent",
-            "id": "component-AppComponent-44813af2c077dffd7ecadfcad748cb856178a2d9e884801f96ffbbf136b0ed498ed04eeaf96a3175f2d9d44ff81a9a865157b67eaba8d6e513394afa60eb56a1",
+            "id": "component-AppComponent-ce372096a10aa119f1d024e15e9ccfba7fe50ecf96df9e9bfb52054e7d1ee843ba577d67276791a183247114e5d0c20af33f209efa1f61b96255449a6674eb6e",
             "file": "src/app/app.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -58,7 +58,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\r\n//import { RouterOutlet } from '@angular/router';\r\nimport { ButtonComponent } from '../components/button/button.component';\r\nimport { IconComponent } from '../components/icon/icon.component';\r\n\r\n@Component({\r\n  selector: 'app-root',\r\n  imports: [ButtonComponent, IconComponent ],\r\n  templateUrl: './app.component.html',\r\n  styleUrl: './app.component.scss'\r\n})\r\nexport class AppComponent {\r\n  title = 'code-connect';\r\n}\r\n",
+            "sourceCode": "import { Component } from '@angular/core';\r\n//import { RouterOutlet } from '@angular/router';\r\nimport { ButtonComponent } from '../components/molecules/button/button.component';\r\nimport { IconComponent } from '../components/atoms/icon/icon.component';\r\n\r\n@Component({\r\n  selector: 'app-root',\r\n  imports: [ButtonComponent, IconComponent ],\r\n  templateUrl: './app.component.html',\r\n  styleUrl: './app.component.scss'\r\n})\r\nexport class AppComponent {\r\n  title = 'code-connect';\r\n}\r\n",
             "styleUrl": "./app.component.scss",
             "assetsDirs": [],
             "styleUrlsData": "",
@@ -68,8 +68,8 @@
         },
         {
             "name": "ButtonComponent",
-            "id": "component-ButtonComponent-fca8459cafdae1dc7f91830ec0998baf1802c5d39ad63f3169e55c9a8d3a9893088cb8ec8df7435ea6c8250b645e5ec55266c80ab9bff47200bbc065688f4acc",
-            "file": "src/components/button/button.component.ts",
+            "id": "component-ButtonComponent-210388f601ff39d65b40e21e101e12940553f58444a2cc7f487e7fa3f245986ed3da1130cf733109273b1a1a00f088c83159f09f7a16fe4cf425871655f9f61a",
+            "file": "src/components/molecules/button/button.component.ts",
             "encapsulation": [],
             "entryComponents": [],
             "host": {},
@@ -86,24 +86,6 @@
             "hostDirectives": [],
             "inputsClass": [
                 {
-                    "name": "disabled",
-                    "defaultValue": "false",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "line": 24,
-                    "type": "boolean",
-                    "decorators": []
-                },
-                {
-                    "name": "inProgress",
-                    "defaultValue": "false",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "line": 25,
-                    "type": "boolean",
-                    "decorators": []
-                },
-                {
                     "name": "label",
                     "defaultValue": "'Button'",
                     "deprecated": false,
@@ -113,12 +95,12 @@
                     "decorators": []
                 },
                 {
-                    "name": "outline",
-                    "defaultValue": "false",
+                    "name": "rank",
+                    "defaultValue": "'primary'",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 22,
-                    "type": "boolean",
+                    "line": 21,
+                    "type": "\"primary\" | \"secondary\" | \"success\" | \"danger\" | \"warning\" | \"info\" | \"light\" | \"dark\" | \"link\"",
                     "decorators": []
                 },
                 {
@@ -137,15 +119,6 @@
                     "deprecationMessage": "",
                     "line": 20,
                     "type": "\"button\" | \"submit\" | \"reset\"",
-                    "decorators": []
-                },
-                {
-                    "name": "variant",
-                    "defaultValue": "'primary'",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "line": 21,
-                    "type": "\"primary\" | \"secondary\" | \"success\" | \"danger\" | \"warning\" | \"info\" | \"light\" | \"dark\" | \"link\"",
                     "decorators": []
                 }
             ],
@@ -179,7 +152,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { CommonModule } from '@angular/common';\r\nimport { Component, Input, Output, EventEmitter } from '@angular/core';\r\nimport { IconComponent } from '../icon/icon.component';\r\nimport { MaterialSymbol } from 'material-symbols';\r\n\r\n@Component({\r\n  selector: '[bs-button]',\r\n  standalone: true,\r\n  imports: [CommonModule, IconComponent],\r\n  templateUrl: './button.component.html',\r\n  styleUrl: './button.component.scss',\r\n  host: {\r\n    '[class]': 'classes',\r\n    '[type]': 'type',\r\n    '[attr.aria-disabled]': 'disabled || inProgress'\r\n  },\r\n})\r\nexport class ButtonComponent {\r\n  @Input() label = 'Button';\r\n  @Input() type: 'button' | 'submit' | 'reset' = 'button';\r\n  @Input() variant: 'primary' | 'secondary' | 'success' | 'danger' | 'warning' | 'info' | 'light' | 'dark' | 'link' = 'primary';\r\n  @Input() outline = false;\r\n  @Input() size: 'sm' | 'md' | 'lg' = 'md';\r\n  @Input() disabled=false;\r\n  @Input() inProgress=false;\r\n  // @Input() iconStart: null | MaterialSymbol = null;\r\n  // @Input() iconEnd: null | MaterialSymbol = null;\r\n  \r\n  @Output() onClick = new EventEmitter<Event>();\r\n\r\n  public get classes(): string[] {\r\n    let outlineString = '';\r\n    let disabledString = '';\r\n    if (this.outline) {\r\n      outlineString = 'outline-'\r\n    }\r\n    if (this.disabled || this.inProgress) {\r\n      disabledString = 'disabled'\r\n    }\r\n    return ['btn', `btn-` + `${outlineString}` + `${this.variant}`, `btn-${this.size}`, `${disabledString}`];\r\n  }\r\n}\r\n",
+            "sourceCode": "import { CommonModule } from '@angular/common';\r\nimport { Component, Input, Output, EventEmitter } from '@angular/core';\r\nimport { IconComponent } from '../../atoms/icon/icon.component';\r\nimport { MaterialSymbol } from 'material-symbols';\r\n\r\n@Component({\r\n  selector: '[bs-button]',\r\n  standalone: true,\r\n  imports: [CommonModule, IconComponent],\r\n  templateUrl: './button.component.html',\r\n  styleUrl: './button.component.scss',\r\n  host: {\r\n    '[class]': 'classes',\r\n    '[type]': 'type',\r\n    '[attr.aria-disabled]': 'disabled || inProgress'\r\n  },\r\n})\r\nexport class ButtonComponent {\r\n  @Input() label = 'Button';\r\n  @Input() type: 'button' | 'submit' | 'reset' = 'button';\r\n  @Input() rank: 'primary' | 'secondary' | 'success' | 'danger' | 'warning' | 'info' | 'light' | 'dark' | 'link' = 'primary';\r\n  //@Input() outline = false;\r\n  @Input() size: 'sm' | 'md' | 'lg' = 'md';\r\n  //@Input() disabled=false;\r\n  //@Input() inProgress=false;\r\n  //@Input() iconStart: null | MaterialSymbol = null;\r\n  //@Input() iconEnd: null | MaterialSymbol = null;\r\n  \r\n  @Output() onClick = new EventEmitter<Event>();\r\n\r\n  public get classes(): string[] {\r\n    let outlineString = '';\r\n    let disabledString = '';\r\n    // if (this.outline) {\r\n    //   outlineString = 'outline-'\r\n    // }\r\n    // if (this.disabled || this.inProgress) {\r\n    //   disabledString = 'disabled'\r\n    // }\r\n    //return ['btn', `btn-` + `${outlineString}` + `${this.variant}`, `btn-${this.size}`, `${disabledString}`];\r\n    return ['btn', `btn-` + `${outlineString}`, `btn-${this.size}`, `${disabledString}`];\r\n  }\r\n}\r\n",
             "styleUrl": "./button.component.scss",
             "assetsDirs": [],
             "styleUrlsData": "",
@@ -196,12 +169,12 @@
                     }
                 }
             },
-            "templateData": "<span\r\n  *ngIf=\"inProgress\"\r\n  class=\"spinner-border spinner-border-sm\"\r\n  role=\"status\"\r\n  aria-hidden=\"true\"\r\n></span>\r\n<span>{{ label }}</span>\r\n"
+            "templateData": "<span\r\n  class=\"spinner-border spinner-border-sm\"\r\n  role=\"status\"\r\n  aria-hidden=\"true\"\r\n></span>\r\n<span>{{ label }}</span>\r\n"
         },
         {
             "name": "IconComponent",
             "id": "component-IconComponent-6a402b9ebdc8d19413b0088db85555ca9bc184cd6332d794917de02ccd54c632f7ac72114da0b54a2938262a9b3f2a23c9875c601800a3e2058bd06836439987",
-            "file": "src/components/icon/icon.component.ts",
+            "file": "src/components/atoms/icon/icon.component.ts",
             "encapsulation": [],
             "entryComponents": [],
             "host": {},
@@ -322,21 +295,21 @@
                 "status": "low"
             },
             {
-                "filePath": "src/components/button/button.component.ts",
-                "type": "component",
-                "linktype": "component",
-                "name": "ButtonComponent",
-                "coveragePercent": 0,
-                "coverageCount": "0/9",
-                "status": "low"
-            },
-            {
-                "filePath": "src/components/icon/icon.component.ts",
+                "filePath": "src/components/atoms/icon/icon.component.ts",
                 "type": "component",
                 "linktype": "component",
                 "name": "IconComponent",
                 "coveragePercent": 0,
                 "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "src/components/molecules/button/button.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "ButtonComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/6",
                 "status": "low"
             }
         ]

@@ -42,11 +42,11 @@ figma.connect('<FIGMA_BUTTONS_BUTTONS>', {
       Disabled: 'disabled',
     }),
   },
-  example: ({ state, text, variant, size }) => html`<bs-button
-    label=${text}
+  example: (props) => html`<bs-button
+    label=${props.text}
     type="button"
-    variant=${variant}
-    state=${state}
-    size=${size}
+    variant=${props.variant}
+    state=${props.state}
+    size=${props.size}
   ></bs-button>`,
 });
