@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, Input, Output, EventEmitter } from '@angular/core';
-import { IconComponent } from '../icon/icon.component';
+import { IconComponent } from '../../atoms/icon/icon.component';
 import { MaterialSymbol } from 'material-symbols';
 
 @Component({
