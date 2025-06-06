@@ -4,7 +4,7 @@ import { IconComponent } from '../../atoms/icon/icon.component';
 import { MaterialSymbol } from 'material-symbols';
 
 @Component({
-  selector: '[bs-button]',
+  selector: 'button[bs-button], a[bs-button]',
   standalone: true,
   imports: [CommonModule, IconComponent],
   templateUrl: './button.component.html',
