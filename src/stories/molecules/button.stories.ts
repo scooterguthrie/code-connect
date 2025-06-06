@@ -18,19 +18,16 @@ type Story = StoryObj<ButtonComponent>;
 export const Primary: Story = {
   args: {
     label: 'Button',
-    variant: 'primary',
-    outline: false,
+    rank: 'primary',
     type: 'button',
     size: 'md',
-    disabled: false,
-    inProgress: false,
   },
 };
 
 export const Secondary: Story = {
   args: {
     label: 'Button',
-    variant: 'secondary',
+    rank: 'secondary',
   },
 };
 
