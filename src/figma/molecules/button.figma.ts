@@ -7,7 +7,7 @@ import figma, { html } from '@figma/code-connect/html';
  * code component, and update the `example` function to return the
  * code example you'd like to see in Figma
  */
-//test push
+
 figma.connect('<FIGMA_BUTTONS_BUTTONS>', {
   props: {
     label: figma.string('Label'),

@@ -57,3 +57,19 @@ Angular CLI does not come with an end-to-end testing framework by default. You c
 ## Additional Resources
 
 For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+
+## Figma Code Connect
+
+1. Create a Figma Personal Access Token
+2. Make a new file in the root of your repo called ".env"
+3. Add ".env" to ".gitignore"
+4. Add "PERSONAL_ACCESS_TOKEN=the token copied from figma
+5. In Figma Dev Mode, right-click on your component and select "Copy link to selection".
+6. run 
+```bash
+npx connect create "URL copied in step one"
+```
+7. run
+```bash
+npx figma connect publish
+```
