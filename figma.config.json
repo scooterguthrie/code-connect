@@ -5,10 +5,12 @@
     "parser": "html",
     "label": "Angular",
     "importPaths": {
-      "components/**/*": "components"
+      "components/atoms/**/*": "atoms",
+      "components/molecules/**/*": "molecules"
     },
     "paths": {
-      "components": ["src/components"]
+      "atoms": ["src/components/atoms"],
+      "molecules": ["src/components/molecules"]
     },
     "documentUrlSubstitutions": {
       "<FIGMA_BUTTONS_BUTTONS>": "https://www.figma.com/design/ieJsu7PujVZz8gX0Um9QMv/Code-Connect-POC?node-id=64-5"
