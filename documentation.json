@@ -64,11 +64,11 @@
             "styleUrlsData": "",
             "stylesData": "",
             "extends": [],
-            "templateData": "<div class=\"container-xxl\">\n  <h1>Storybook Code Connect Test</h1>\n  <h2>Icon Component</h2>\n  <ul class=\"list-unstyled\">\n    <li><icon name=\"search\" size=\"icon-sm\"/> Small</li>\n    <li><icon name=\"search\"/>Default</li>\n    <li><icon name=\"search\" size=\"icon-lg\"/>Large</li>\n  </ul>\n  <h2>Button Component</h2>\n  <div class=\"d-grid gap-3 d-md-flex\">\n    <button bs-button label=\"Component Button 01\"></button>\n    <button\n      bs-button\n      label=\"Component Button 02\"\n    ></button>\n  </div>\n</div>\n"
+            "templateData": "<div class=\"container-xxl\">\n  <h1>Storybook Code Connect Test</h1>\n  <h2>Icon Component</h2>\n  <ul class=\"list-unstyled\">\n    <li><icon name=\"search\" size=\"icon-sm\" /> Small</li>\n    <li><icon name=\"search\" />Default</li>\n    <li><icon name=\"search\" size=\"icon-lg\" />Large</li>\n  </ul>\n  <h2>Button Component</h2>\n  <div class=\"d-grid gap-3 d-md-flex\">\n    <button\n      bs-button\n      [showIcon]=\"true\"\n      [iconName]=\"'assist_walker'\"\n      label=\"Component Button 01\"\n    ></button>\n    <button bs-button label=\"Component Button 02\"></button>\n  </div>\n</div>\n"
         },
         {
             "name": "ButtonComponent",
-            "id": "component-ButtonComponent-0672723d0edcd98e2998ecc3d3a8be4b3439dd1d9b20af9358da2e8d1ee351c5301486bcb2aefd0ad60d5bcfe3513583c3ca6c67b8b6ffca81f4e6f1816add61",
+            "id": "component-ButtonComponent-757887e75886389525d08dfd89980e8d1ed08c98ffcccd9c46015d6db9b0b951f3a15bf3c6f848cae0a06ea2c67360ec4605fe8ff62174dea197c449b1e41a16",
             "file": "src/components/molecules/button/button.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -85,6 +85,14 @@
             "viewProviders": [],
             "hostDirectives": [],
             "inputsClass": [
+                {
+                    "name": "iconName",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 38,
+                    "type": "MaterialSymbol",
+                    "decorators": []
+                },
                 {
                     "name": "label",
                     "defaultValue": "'Button'",
@@ -104,11 +112,20 @@
                     "decorators": []
                 },
                 {
+                    "name": "showIcon",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 37,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
                     "name": "size",
                     "defaultValue": "'md'",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 23,
+                    "line": 32,
                     "type": "\"sm\" | \"md\" | \"lg\"",
                     "decorators": []
                 },
@@ -128,7 +145,7 @@
                     "defaultValue": "new EventEmitter<Event>()",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 29,
+                    "line": 40,
                     "type": "EventEmitter"
                 }
             ],
@@ -152,7 +169,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { CommonModule } from '@angular/common';\nimport { Component, Input, Output, EventEmitter } from '@angular/core';\nimport { IconComponent } from '../../atoms/icon/icon.component';\nimport { MaterialSymbol } from 'material-symbols';\n\n@Component({\n  selector: 'button[bs-button], a[bs-button]',\n  standalone: true,\n  imports: [CommonModule, IconComponent],\n  templateUrl: './button.component.html',\n  styleUrl: './button.component.scss',\n  host: {\n    '[class]': 'classes',\n    '[type]': 'type',\n    '[attr.aria-disabled]': 'disabled || inProgress'\n  },\n})\nexport class ButtonComponent {\n  @Input() label = 'Button';\n  @Input() type: 'button' | 'submit' | 'reset' = 'button';\n  @Input() rank: 'primary' | 'secondary' | 'success' | 'danger' | 'warning' | 'info' | 'light' | 'dark' | 'link' = 'primary';\n  //@Input() outline = false;\n  @Input() size: 'sm' | 'md' | 'lg' = 'md';\n  //@Input() disabled=false;\n  //@Input() inProgress=false;\n  //@Input() iconStart: null | MaterialSymbol = null;\n  //@Input() iconEnd: null | MaterialSymbol = null;\n  \n  @Output() onClick = new EventEmitter<Event>();\n\n  public get classes(): string[] {\n    let outlineString = '';\n    let disabledString = '';\n    // if (this.outline) {\n    //   outlineString = 'outline-'\n    // }\n    // if (this.disabled || this.inProgress) {\n    //   disabledString = 'disabled'\n    // }\n    return ['btn', `btn-` + `${outlineString}` + `${this.rank}`, `btn-${this.size}`, `${disabledString}`];\n  }\n}\n",
+            "sourceCode": "import { CommonModule } from '@angular/common';\nimport { Component, Input, Output, EventEmitter } from '@angular/core';\nimport { IconComponent } from '../../atoms/icon/icon.component';\nimport { MaterialSymbol } from 'material-symbols';\n\n@Component({\n  selector: 'button[bs-button], a[bs-button]',\n  standalone: true,\n  imports: [CommonModule, IconComponent],\n  templateUrl: './button.component.html',\n  styleUrl: './button.component.scss',\n  host: {\n    '[class]': 'classes',\n    '[type]': 'type',\n    '[attr.aria-disabled]': 'disabled || inProgress',\n  },\n})\nexport class ButtonComponent {\n  @Input() label = 'Button';\n  @Input() type: 'button' | 'submit' | 'reset' = 'button';\n  @Input() rank:\n    | 'primary'\n    | 'secondary'\n    | 'success'\n    | 'danger'\n    | 'warning'\n    | 'info'\n    | 'light'\n    | 'dark'\n    | 'link' = 'primary';\n  //@Input() outline = false;\n  @Input() size: 'sm' | 'md' | 'lg' = 'md';\n  //@Input() disabled=false;\n  //@Input() inProgress=false;\n  //@Input() iconStart: null | MaterialSymbol = null;\n  //@Input() iconEnd: null | MaterialSymbol = null;\n  @Input() showIcon = false;\n  @Input() iconName!: MaterialSymbol;\n\n  @Output() onClick = new EventEmitter<Event>();\n\n  public get classes(): string[] {\n    let outlineString = '';\n    let disabledString = '';\n    // if (this.outline) {\n    //   outlineString = 'outline-'\n    // }\n    // if (this.disabled || this.inProgress) {\n    //   disabledString = 'disabled'\n    // }\n    return [\n      'btn',\n      `btn-` + `${outlineString}` + `${this.rank}`,\n      `btn-${this.size}`,\n      `${disabledString}`,\n    ];\n  }\n}\n",
             "styleUrl": "./button.component.scss",
             "assetsDirs": [],
             "styleUrlsData": "",
@@ -165,11 +182,11 @@
                         "name": "classes",
                         "type": "[]",
                         "returnType": "string[]",
-                        "line": 31
+                        "line": 42
                     }
                 }
             },
-            "templateData": "<!-- <span\n  class=\"spinner-border spinner-border-sm\"\n  role=\"status\"\n  aria-hidden=\"true\"\n></span> -->\n<span>{{ label }}</span>\n"
+            "templateData": "<!-- <span\n  class=\"spinner-border spinner-border-sm\"\n  role=\"status\"\n  aria-hidden=\"true\"\n></span> -->\n@if(showIcon == false){\n<span>{{ label }}</span\n>} @if (showIcon == true){\n<icon [name]=\"iconName\"></icon>\n<span>{{ label }}</span>\n\n}\n"
         },
         {
             "name": "IconComponent",
@@ -309,7 +326,7 @@
                 "linktype": "component",
                 "name": "ButtonComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/6",
+                "coverageCount": "0/8",
                 "status": "low"
             }
         ]

@@ -3,4 +3,10 @@
   role="status"
   aria-hidden="true"
 ></span> -->
+@if(showIcon == false){
+<span>{{ label }}</span
+>} @if (showIcon == true){
+<icon [name]="iconName"></icon>
 <span>{{ label }}</span>
+
+}
