@@ -1,10 +1,12 @@
-<!-- <span
+@if(inProgress){<span
   class="spinner-border spinner-border-sm"
   role="status"
   aria-hidden="true"
-></span> -->
-
-@if (showIcon == true){
+></span
+>} @if (iconName !== 'no_icon'){
 <icon [name]="iconName"></icon>
-}
-<span>{{ label }}</span>
+} @if(iconOnly){
+<span class="visually-hidden">{{ label }}</span>
+} @else {
+<span>{{ label }}</span
+>}

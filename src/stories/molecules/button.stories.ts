@@ -22,7 +22,10 @@ export const Primary: Story = {
     rank: 'primary',
     type: 'button',
     size: 'md',
-    showIcon: false,
+    iconOnly: false,
+    inProgress: false,
+    disabled: false,
+    outline: false,
     iconName: 'add_circle',
   },
 };
