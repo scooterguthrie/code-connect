@@ -10,11 +10,15 @@ import type { MaterialSymbol } from 'material-symbols';
   styleUrl: './icon.component.scss',
   host: {
     class: 'material-symbols-rounded',
+    '[class]': 'classes',
     '[attr.aria-hidden]': 'true',
-    '[class]': 'size',
   },
 })
 export class IconComponent {
   @Input() name: MaterialSymbol = 'add_circle';
-  @Input() size: 'default' | 'icon-sm' | 'icon-lg' = 'default';
+  @Input() size: 'default' | 'sm' | 'lg' = 'default';
+
+  public get classes(): string[] {
+    return ['material-symbols-rounded', `icon-${this.size}`,]
+  }
 }

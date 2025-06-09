@@ -25,13 +25,13 @@ export const Default: Story = {
 export const Small: Story = {
   args: {
     name: 'add_circle',
-    size: 'icon-sm',
+    size: 'sm',
   },
 };
 
 export const Large: Story = {
   args: {
     name: 'add_circle',
-    size: 'icon-lg',
+    size: 'lg',
   },
 };

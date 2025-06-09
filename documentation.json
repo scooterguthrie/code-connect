@@ -64,11 +64,11 @@
             "styleUrlsData": "",
             "stylesData": "",
             "extends": [],
-            "templateData": "<div class=\"container-xxl\">\r\n  <h1>Storybook Code Connect Test</h1>\r\n  <h2>Icon Component</h2>\r\n  <ul class=\"list-unstyled\">\r\n    <li><icon name=\"search\" size=\"icon-sm\" /> Small</li>\r\n    <li><icon name=\"search\" />Default</li>\r\n    <li><icon name=\"search\" size=\"icon-lg\" />Large</li>\r\n  </ul>\r\n  <h2>Button Component</h2>\r\n  <div class=\"d-grid gap-3 d-md-flex\">\r\n    <button\r\n      bs-button\r\n      label=\"Component Button 01\"\r\n      icon=\"add\"\r\n    ></button>\r\n    <button bs-button label=\"Component Button 02\"></button>\r\n  </div>\r\n</div>\r\n"
+            "templateData": "<div class=\"container-xxl\">\r\n  <h1>Storybook Code Connect Test</h1>\r\n  <h2>Icon Component</h2>\r\n  <ul class=\"list-unstyled\">\r\n    <li><icon name=\"search\" size=\"sm\" /> Small</li>\r\n    <li><icon name=\"search\" />Default</li>\r\n    <li><icon name=\"search\" size=\"lg\" />Large</li>\r\n  </ul>\r\n  <h2>Button Component</h2>\r\n  <div class=\"d-grid gap-3 d-md-flex\">\r\n    <button\r\n      bs-button\r\n      label=\"Component Button 01\"\r\n      icon=\"add\"\r\n    ></button>\r\n    <button bs-button label=\"Component Button 02\"></button>\r\n  </div>\r\n</div>\r\n"
         },
         {
             "name": "ButtonComponent",
-            "id": "component-ButtonComponent-c261a65a6e9965720128b56abebafc44ded6dd039ba734d09c978882125a5456de4beb1fd9bf06af7ed22755396516c919f7600994926fda89f7b79ea1b84d9b",
+            "id": "component-ButtonComponent-d7517416fd2f652dade50b5ebb315adda2c44eb9467857c3b27276bd557b1a0cc9febe7d535a04320a40a7d542db898ebcdd1e58e0ac0605890c2d44749a3140",
             "file": "src/components/molecules/button/button.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -90,7 +90,7 @@
                     "defaultValue": "false",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 34,
+                    "line": 36,
                     "type": "boolean",
                     "decorators": []
                 },
@@ -99,7 +99,7 @@
                     "defaultValue": "null",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 36,
+                    "line": 33,
                     "type": "MaterialSymbol | null",
                     "decorators": []
                 },
@@ -108,7 +108,7 @@
                     "defaultValue": "false",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 33,
+                    "line": 34,
                     "type": "boolean",
                     "decorators": []
                 },
@@ -135,7 +135,7 @@
                     "defaultValue": "false",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 31,
+                    "line": 30,
                     "type": "boolean",
                     "decorators": []
                 },
@@ -144,17 +144,17 @@
                     "defaultValue": "'primary'",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 21,
+                    "line": 20,
                     "type": "\"primary\" | \"secondary\" | \"success\" | \"danger\" | \"warning\" | \"info\" | \"light\" | \"dark\" | \"link\"",
                     "decorators": []
                 },
                 {
                     "name": "size",
-                    "defaultValue": "'md'",
+                    "defaultValue": "'default'",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "line": 32,
-                    "type": "\"sm\" | \"md\" | \"lg\"",
+                    "type": "\"default\" | \"sm\" | \"lg\"",
                     "decorators": []
                 },
                 {
@@ -162,7 +162,7 @@
                     "defaultValue": "'button'",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 20,
+                    "line": 31,
                     "type": "\"button\" | \"submit\" | \"reset\"",
                     "decorators": []
                 }
@@ -197,7 +197,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { CommonModule } from '@angular/common';\r\nimport { Component, Input, Output, EventEmitter } from '@angular/core';\r\nimport { IconComponent } from '../../atoms/icon/icon.component';\r\nimport { MaterialSymbol } from 'material-symbols';\r\n\r\n@Component({\r\n  selector: 'button[bs-button], a[bs-button]',\r\n  standalone: true,\r\n  imports: [CommonModule, IconComponent],\r\n  templateUrl: './button.component.html',\r\n  styleUrl: './button.component.scss',\r\n  host: {\r\n    '[class]': 'classes',\r\n    '[type]': 'type',\r\n    '[attr.aria-disabled]': 'disabled || inProgress',\r\n  },\r\n})\r\nexport class ButtonComponent {\r\n  @Input() label = 'Button';\r\n  @Input() type: 'button' | 'submit' | 'reset' = 'button';\r\n  @Input() rank:\r\n    | 'primary'\r\n    | 'secondary'\r\n    | 'success'\r\n    | 'danger'\r\n    | 'warning'\r\n    | 'info'\r\n    | 'light'\r\n    | 'dark'\r\n    | 'link' = 'primary';\r\n  @Input() outline = false;\r\n  @Input() size: 'sm' | 'md' | 'lg' = 'md';\r\n  @Input() iconOnly = false;\r\n  @Input() disabled = false;\r\n  @Input() inProgress = false;\r\n  @Input() icon: MaterialSymbol | null = null;\r\n\r\n  @Output() onClick = new EventEmitter<Event>();\r\n\r\n  public get classes(): string[] {\r\n    let outlineString = '';\r\n    let disabledString = '';\r\n    if (this.outline) {\r\n      outlineString = 'outline-';\r\n    }\r\n    if (this.disabled || this.inProgress) {\r\n      disabledString = 'disabled';\r\n    }\r\n    return [\r\n      'btn',\r\n      `btn-` + `${outlineString}` + `${this.rank}`,\r\n      `btn-${this.size}`,\r\n      `${disabledString}`,\r\n    ];\r\n  }\r\n}\r\n",
+            "sourceCode": "import { CommonModule } from '@angular/common';\r\nimport { Component, Input, Output, EventEmitter } from '@angular/core';\r\nimport { IconComponent } from '../../atoms/icon/icon.component';\r\nimport { MaterialSymbol } from 'material-symbols';\r\n\r\n@Component({\r\n  selector: 'button[bs-button], a[bs-button]',\r\n  standalone: true,\r\n  imports: [CommonModule, IconComponent],\r\n  templateUrl: './button.component.html',\r\n  styleUrl: './button.component.scss',\r\n  host: {\r\n    '[class]': 'classes',\r\n    '[type]': 'type',\r\n    '[attr.aria-disabled]': 'disabled || inProgress',\r\n  },\r\n})\r\nexport class ButtonComponent {\r\n  @Input() label = 'Button';\r\n  @Input() rank:\r\n    | 'primary'\r\n    | 'secondary'\r\n    | 'success'\r\n    | 'danger'\r\n    | 'warning'\r\n    | 'info'\r\n    | 'light'\r\n    | 'dark'\r\n    | 'link' = 'primary';\r\n  @Input() outline = false;\r\n  @Input() type: 'button' | 'submit' | 'reset' = 'button';\r\n  @Input() size: 'default' | 'sm' | 'lg' = 'default';\r\n  @Input() icon: MaterialSymbol | null = null;\r\n  @Input() iconOnly = false;\r\n  @Input() inProgress = false;\r\n  @Input() disabled = false;\r\n\r\n  @Output() onClick = new EventEmitter<Event>();\r\n\r\n  public get classes(): string[] {\r\n    let outlineString = '';\r\n    let disabledString = '';\r\n    if (this.outline) {\r\n      outlineString = 'outline-';\r\n    }\r\n    if (this.disabled || this.inProgress) {\r\n      disabledString = 'disabled';\r\n    }\r\n    return [\r\n      'btn',\r\n      `btn-` + `${outlineString}` + `${this.rank}`,\r\n      `btn-${this.size}`,\r\n      `${disabledString}`,\r\n    ];\r\n  }\r\n}\r\n",
             "styleUrl": "./button.component.scss",
             "assetsDirs": [],
             "styleUrlsData": "",
@@ -214,11 +214,11 @@
                     }
                 }
             },
-            "templateData": "@if(inProgress){<span\r\n  class=\"spinner-border spinner-border-sm\"\r\n  role=\"status\"\r\n  aria-hidden=\"true\"\r\n></span\r\n>} @if (icon !== null){\r\n<icon [name]=\"icon\"></icon>\r\n}\r\n<span class=\"btn-label\" [ngClass]=\"{ 'visually-hidden': iconOnly }\">{{ label }}</span>\r\n"
+            "templateData": "@if(inProgress){<span\r\n  class=\"spinner-border spinner-border-sm\"\r\n  role=\"status\"\r\n  aria-hidden=\"true\"\r\n></span\r\n>} @if (icon !== null){\r\n<icon [name]=\"icon\" [size]=\"size\"></icon>\r\n}\r\n<span class=\"btn-label\" [ngClass]=\"{ 'visually-hidden': iconOnly }\">{{ label }}</span>\r\n"
         },
         {
             "name": "IconComponent",
-            "id": "component-IconComponent-4946fabb62e6095c888f89c9a562f1da056007d7c46dfd3e7fb49d967d2487ff014b9a823d01297c4a271da8f7c94fbaece829549a8211ded38b999acde2a4bf",
+            "id": "component-IconComponent-fc6bacfc665993d5f326bc749655ed4be1d12d542cb1af44181d64798a7c185ca60f0b8c59547f203a337b31be38fcbca92649fc45ef6f53fc00c3f08b35adde",
             "file": "src/components/atoms/icon/icon.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -250,7 +250,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "line": 19,
-                    "type": "\"default\" | \"icon-sm\" | \"icon-lg\"",
+                    "type": "\"default\" | \"sm\" | \"lg\"",
                     "decorators": []
                 }
             ],
@@ -271,12 +271,23 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { CommonModule } from '@angular/common';\r\nimport { Component, Input } from '@angular/core';\r\nimport type { MaterialSymbol } from 'material-symbols';\r\n\r\n@Component({\r\n  selector: 'icon',\r\n  imports: [CommonModule],\r\n  standalone: true,\r\n  templateUrl: './icon.component.html',\r\n  styleUrl: './icon.component.scss',\r\n  host: {\r\n    class: 'material-symbols-rounded',\r\n    '[attr.aria-hidden]': 'true',\r\n    '[class]': 'size',\r\n  },\r\n})\r\nexport class IconComponent {\r\n  @Input() name: MaterialSymbol = 'add_circle';\r\n  @Input() size: 'default' | 'icon-sm' | 'icon-lg' = 'default';\r\n}\r\n",
+            "sourceCode": "import { CommonModule } from '@angular/common';\r\nimport { Component, Input } from '@angular/core';\r\nimport type { MaterialSymbol } from 'material-symbols';\r\n\r\n@Component({\r\n  selector: 'icon',\r\n  imports: [CommonModule],\r\n  standalone: true,\r\n  templateUrl: './icon.component.html',\r\n  styleUrl: './icon.component.scss',\r\n  host: {\r\n    class: 'material-symbols-rounded',\r\n    '[class]': 'classes',\r\n    '[attr.aria-hidden]': 'true',\r\n  },\r\n})\r\nexport class IconComponent {\r\n  @Input() name: MaterialSymbol = 'add_circle';\r\n  @Input() size: 'default' | 'sm' | 'lg' = 'default';\r\n\r\n  public get classes(): string[] {\r\n    return ['material-symbols-rounded', `icon-${this.size}`,]\r\n  }\r\n}\r\n",
             "styleUrl": "./icon.component.scss",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
             "extends": [],
+            "accessors": {
+                "classes": {
+                    "name": "classes",
+                    "getSignature": {
+                        "name": "classes",
+                        "type": "[]",
+                        "returnType": "string[]",
+                        "line": 21
+                    }
+                }
+            },
             "templateData": "{{name}}"
         }
     ],

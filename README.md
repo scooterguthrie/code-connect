@@ -67,9 +67,14 @@ For more information on using the Angular CLI, including detailed command refere
 5. In Figma Dev Mode, right-click on your component and select "Copy link to selection".
 6. run 
 ```bash
-npx connect create "URL copied in step one"
+npx figma connect create "URL copied in step one"
 ```
 7. run
 ```bash
 npx figma connect publish
+```
+
+to unpublish
+```bash
+npx figma connect unpublish --node=NODE_URL
 ```
