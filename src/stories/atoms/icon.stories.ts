@@ -18,7 +18,6 @@ type Story = StoryObj<IconComponent>;
 export const Default: Story = {
   args: {
     name: 'add_circle',
-    size: 'default',
   },
 };
 
