@@ -33,7 +33,7 @@ export class ButtonComponent {
   @Input() iconOnly = false;
   @Input() disabled = false;
   @Input() inProgress = false;
-  @Input() iconName!: MaterialSymbol | 'no_icon';
+  @Input() icon: MaterialSymbol | null = null;
 
   @Output() onClick = new EventEmitter<Event>();
 

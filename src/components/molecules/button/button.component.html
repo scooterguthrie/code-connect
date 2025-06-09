@@ -3,10 +3,7 @@
   role="status"
   aria-hidden="true"
 ></span
->} @if (iconName !== 'no_icon'){
-<icon [name]="iconName"></icon>
-} @if(iconOnly){
-<span class="visually-hidden">{{ label }}</span>
-} @else {
-<span>{{ label }}</span
->}
+>} @if (icon !== null){
+<icon [name]="icon"></icon>
+}
+<span class="btn-label" [ngClass]="{ 'visually-hidden': iconOnly }">{{ label }}</span>
