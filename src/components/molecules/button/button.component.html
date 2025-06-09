@@ -3,7 +3,12 @@
   role="status"
   aria-hidden="true"
 ></span
->} @if (icon !== null){
-<icon [name]="icon"></icon>
-}
-<span class="btn-label" [ngClass]="{ 'visually-hidden': iconOnly }">{{ label }}</span>
+>} @if (icon !== null){ @if (size == 'sm') {<icon
+  [size]="'icon-sm'"
+  [name]="icon"
+></icon
+>} @if (size == 'lg') {<icon [size]="'icon-lg'" [name]="icon"></icon>} @if (size
+== 'md') {<icon [size]="'default'" [name]="icon"></icon>} }
+<span class="btn-label" [ngClass]="{ 'visually-hidden': iconOnly }">{{
+  label
+}}</span>

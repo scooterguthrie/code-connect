@@ -9,7 +9,7 @@
     "components": [
         {
             "name": "AppComponent",
-            "id": "component-AppComponent-ce372096a10aa119f1d024e15e9ccfba7fe50ecf96df9e9bfb52054e7d1ee843ba577d67276791a183247114e5d0c20af33f209efa1f61b96255449a6674eb6e",
+            "id": "component-AppComponent-9cad793c9054785e9fa8f5cd8d6b67b53f629af28067a564e914f54865bfd59f2bd3497175b050d420ad4886166c5836dbb798652b17dc360a6142256f4a9723",
             "file": "src/app/app.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -58,17 +58,17 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\r\n//import { RouterOutlet } from '@angular/router';\r\nimport { ButtonComponent } from '../components/molecules/button/button.component';\r\nimport { IconComponent } from '../components/atoms/icon/icon.component';\r\n\r\n@Component({\r\n  selector: 'app-root',\r\n  imports: [ButtonComponent, IconComponent ],\r\n  templateUrl: './app.component.html',\r\n  styleUrl: './app.component.scss'\r\n})\r\nexport class AppComponent {\r\n  title = 'code-connect';\r\n}\r\n",
+            "sourceCode": "import { Component } from '@angular/core';\n//import { RouterOutlet } from '@angular/router';\nimport { ButtonComponent } from '../components/molecules/button/button.component';\nimport { IconComponent } from '../components/atoms/icon/icon.component';\n\n@Component({\n  selector: 'app-root',\n  imports: [ButtonComponent, IconComponent ],\n  templateUrl: './app.component.html',\n  styleUrl: './app.component.scss'\n})\nexport class AppComponent {\n  title = 'code-connect';\n}\n",
             "styleUrl": "./app.component.scss",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
             "extends": [],
-            "templateData": "<div class=\"container-xxl\">\r\n  <h1>Storybook Code Connect Test</h1>\r\n  <h2>Icon Component</h2>\r\n  <ul class=\"list-unstyled\">\r\n    <li><icon name=\"search\" size=\"icon-sm\" /> Small</li>\r\n    <li><icon name=\"search\" />Default</li>\r\n    <li><icon name=\"search\" size=\"icon-lg\" />Large</li>\r\n  </ul>\r\n  <h2>Button Component</h2>\r\n  <div class=\"d-grid gap-3 d-md-flex\">\r\n    <button\r\n      bs-button\r\n      label=\"Component Button 01\"\r\n      icon=\"add\"\r\n    ></button>\r\n    <button bs-button label=\"Component Button 02\"></button>\r\n  </div>\r\n</div>\r\n"
+            "templateData": "<div class=\"container-xxl\">\n  <h1>Storybook Code Connect Test</h1>\n  <h2>Icon Component</h2>\n  <ul class=\"list-unstyled\">\n    <li><icon name=\"search\" size=\"icon-sm\" /> Small</li>\n    <li><icon name=\"search\" />Default</li>\n    <li><icon name=\"search\" size=\"icon-lg\" />Large</li>\n  </ul>\n  <h2>Button Component</h2>\n  <div class=\"d-grid gap-3 d-md-flex\">\n    <button\n      bs-button\n      label=\"Component Button 01\"\n      icon=\"add\"\n    ></button>\n    <button bs-button label=\"Component Button 02\"></button>\n  </div>\n</div>\n"
         },
         {
             "name": "ButtonComponent",
-            "id": "component-ButtonComponent-c261a65a6e9965720128b56abebafc44ded6dd039ba734d09c978882125a5456de4beb1fd9bf06af7ed22755396516c919f7600994926fda89f7b79ea1b84d9b",
+            "id": "component-ButtonComponent-a4455f7d57c713e6d89f01184afa8971a20a19628ce3fa4f9834042dfb182ffcda287f2b1882cb6ed6a0129643e5de4f6432861fd13750b646c70d6d9139c361",
             "file": "src/components/molecules/button/button.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -197,7 +197,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { CommonModule } from '@angular/common';\r\nimport { Component, Input, Output, EventEmitter } from '@angular/core';\r\nimport { IconComponent } from '../../atoms/icon/icon.component';\r\nimport { MaterialSymbol } from 'material-symbols';\r\n\r\n@Component({\r\n  selector: 'button[bs-button], a[bs-button]',\r\n  standalone: true,\r\n  imports: [CommonModule, IconComponent],\r\n  templateUrl: './button.component.html',\r\n  styleUrl: './button.component.scss',\r\n  host: {\r\n    '[class]': 'classes',\r\n    '[type]': 'type',\r\n    '[attr.aria-disabled]': 'disabled || inProgress',\r\n  },\r\n})\r\nexport class ButtonComponent {\r\n  @Input() label = 'Button';\r\n  @Input() type: 'button' | 'submit' | 'reset' = 'button';\r\n  @Input() rank:\r\n    | 'primary'\r\n    | 'secondary'\r\n    | 'success'\r\n    | 'danger'\r\n    | 'warning'\r\n    | 'info'\r\n    | 'light'\r\n    | 'dark'\r\n    | 'link' = 'primary';\r\n  @Input() outline = false;\r\n  @Input() size: 'sm' | 'md' | 'lg' = 'md';\r\n  @Input() iconOnly = false;\r\n  @Input() disabled = false;\r\n  @Input() inProgress = false;\r\n  @Input() icon: MaterialSymbol | null = null;\r\n\r\n  @Output() onClick = new EventEmitter<Event>();\r\n\r\n  public get classes(): string[] {\r\n    let outlineString = '';\r\n    let disabledString = '';\r\n    if (this.outline) {\r\n      outlineString = 'outline-';\r\n    }\r\n    if (this.disabled || this.inProgress) {\r\n      disabledString = 'disabled';\r\n    }\r\n    return [\r\n      'btn',\r\n      `btn-` + `${outlineString}` + `${this.rank}`,\r\n      `btn-${this.size}`,\r\n      `${disabledString}`,\r\n    ];\r\n  }\r\n}\r\n",
+            "sourceCode": "import { CommonModule } from '@angular/common';\nimport { Component, Input, Output, EventEmitter } from '@angular/core';\nimport { IconComponent } from '../../atoms/icon/icon.component';\nimport { MaterialSymbol } from 'material-symbols';\n\n@Component({\n  selector: 'button[bs-button], a[bs-button]',\n  standalone: true,\n  imports: [CommonModule, IconComponent],\n  templateUrl: './button.component.html',\n  styleUrl: './button.component.scss',\n  host: {\n    '[class]': 'classes',\n    '[type]': 'type',\n    '[attr.aria-disabled]': 'disabled || inProgress',\n  },\n})\nexport class ButtonComponent {\n  @Input() label = 'Button';\n  @Input() type: 'button' | 'submit' | 'reset' = 'button';\n  @Input() rank:\n    | 'primary'\n    | 'secondary'\n    | 'success'\n    | 'danger'\n    | 'warning'\n    | 'info'\n    | 'light'\n    | 'dark'\n    | 'link' = 'primary';\n  @Input() outline = false;\n  @Input() size: 'sm' | 'md' | 'lg' = 'md';\n  @Input() iconOnly = false;\n  @Input() disabled = false;\n  @Input() inProgress = false;\n  @Input() icon: MaterialSymbol | null = null;\n\n  @Output() onClick = new EventEmitter<Event>();\n\n  public get classes(): string[] {\n    let outlineString = '';\n    let disabledString = '';\n    if (this.outline) {\n      outlineString = 'outline-';\n    }\n    if (this.disabled || this.inProgress) {\n      disabledString = 'disabled';\n    }\n    return [\n      'btn',\n      `btn-` + `${outlineString}` + `${this.rank}`,\n      `btn-${this.size}`,\n      `${disabledString}`,\n    ];\n  }\n}\n",
             "styleUrl": "./button.component.scss",
             "assetsDirs": [],
             "styleUrlsData": "",
@@ -214,11 +214,11 @@
                     }
                 }
             },
-            "templateData": "@if(inProgress){<span\r\n  class=\"spinner-border spinner-border-sm\"\r\n  role=\"status\"\r\n  aria-hidden=\"true\"\r\n></span\r\n>} @if (icon !== null){\r\n<icon [name]=\"icon\"></icon>\r\n}\r\n<span class=\"btn-label\" [ngClass]=\"{ 'visually-hidden': iconOnly }\">{{ label }}</span>\r\n"
+            "templateData": "@if(inProgress){<span\n  class=\"spinner-border spinner-border-sm\"\n  role=\"status\"\n  aria-hidden=\"true\"\n></span\n>} @if (icon !== null){ @if (size == 'sm') {<icon\n  [size]=\"'icon-sm'\"\n  [name]=\"icon\"\n></icon\n>} @if (size == 'lg') {<icon [size]=\"'icon-lg'\" [name]=\"icon\"></icon>} @if (size\n== 'md') {<icon [size]=\"'default'\" [name]=\"icon\"></icon>} }\n<span class=\"btn-label\" [ngClass]=\"{ 'visually-hidden': iconOnly }\">{{\n  label\n}}</span>\n"
         },
         {
             "name": "IconComponent",
-            "id": "component-IconComponent-4946fabb62e6095c888f89c9a562f1da056007d7c46dfd3e7fb49d967d2487ff014b9a823d01297c4a271da8f7c94fbaece829549a8211ded38b999acde2a4bf",
+            "id": "component-IconComponent-20a97320b40f54b6299d65e3df34c9e16aea730d99a4d9e8ee6c8d539c398f1351135783338cd98ea2b3eef99149d6c6633e90efa3c34b7ca79ff0e25fab6d73",
             "file": "src/components/atoms/icon/icon.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -271,7 +271,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { CommonModule } from '@angular/common';\r\nimport { Component, Input } from '@angular/core';\r\nimport type { MaterialSymbol } from 'material-symbols';\r\n\r\n@Component({\r\n  selector: 'icon',\r\n  imports: [CommonModule],\r\n  standalone: true,\r\n  templateUrl: './icon.component.html',\r\n  styleUrl: './icon.component.scss',\r\n  host: {\r\n    class: 'material-symbols-rounded',\r\n    '[attr.aria-hidden]': 'true',\r\n    '[class]': 'size',\r\n  },\r\n})\r\nexport class IconComponent {\r\n  @Input() name: MaterialSymbol = 'add_circle';\r\n  @Input() size: 'default' | 'icon-sm' | 'icon-lg' = 'default';\r\n}\r\n",
+            "sourceCode": "import { CommonModule } from '@angular/common';\nimport { Component, Input } from '@angular/core';\nimport type { MaterialSymbol } from 'material-symbols';\n\n@Component({\n  selector: 'icon',\n  imports: [CommonModule],\n  standalone: true,\n  templateUrl: './icon.component.html',\n  styleUrl: './icon.component.scss',\n  host: {\n    class: 'material-symbols-rounded',\n    '[attr.aria-hidden]': 'true',\n    '[class]': 'size',\n  },\n})\nexport class IconComponent {\n  @Input() name: MaterialSymbol = 'add_circle';\n  @Input() size: 'default' | 'icon-sm' | 'icon-lg' = 'default';\n}\n",
             "styleUrl": "./icon.component.scss",
             "assetsDirs": [],
             "styleUrlsData": "",
