@@ -214,7 +214,7 @@
                     }
                 }
             },
-            "templateData": "@if(inProgress){<span\r\n  class=\"spinner-border spinner-border-sm\"\r\n  role=\"status\"\r\n  aria-hidden=\"true\"\r\n></span\r\n>} @if (icon !== null){\r\n<icon [name]=\"icon\" [size]=\"size\"></icon>\r\n}\r\n<span class=\"btn-label\" [ngClass]=\"{ 'visually-hidden': iconOnly }\">{{ label }}</span>\r\n"
+            "templateData": "@if(inProgress){<span\r\n  class=\"spinner-border spinner-border-sm\"\r\n  role=\"status\"\r\n  aria-hidden=\"true\"\r\n></span\r\n>} @if (icon !== null){\r\n<icon [name]=\"icon\" [size]=\"size\"></icon>\r\n}\r\n<span class=\"btn-label\" [ngClass]=\"{ 'visually-hidden': iconOnly }\">{{\r\n  label\r\n}}</span>\r\n"
         },
         {
             "name": "IconComponent",
