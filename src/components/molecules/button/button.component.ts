@@ -17,7 +17,7 @@ import { MaterialSymbol } from 'material-symbols';
 })
 export class ButtonComponent {
   @Input() label = 'Button';
-  @Input() rank:
+  @Input() rank?:
     | 'primary'
     | 'secondary'
     | 'success'
@@ -27,13 +27,13 @@ export class ButtonComponent {
     | 'light'
     | 'dark'
     | 'link' = 'primary';
-  @Input() outline = false;
-  @Input() type: 'button' | 'submit' | 'reset' = 'button';
+  @Input() outline? = false;
+  @Input() type?: 'button' | 'submit' | 'reset' = 'button';
   @Input() size: 'default' | 'sm' | 'lg' = 'default';
   @Input() icon: MaterialSymbol | null = null;
-  @Input() iconOnly = false;
-  @Input() inProgress = false;
-  @Input() disabled = false;
+  @Input() iconOnly? = false;
+  @Input() inProgress? = false;
+  @Input() disabled? = false;
 
   @Output() onClick = new EventEmitter<Event>();
 

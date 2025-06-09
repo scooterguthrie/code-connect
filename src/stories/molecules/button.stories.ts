@@ -9,6 +9,9 @@ const meta: Meta<ButtonComponent> = {
   component: ButtonComponent,
   tags: ['autodocs'],
   args: { onClick: fn() },
+  argTypes: {
+    icon: { control: 'select', options: symbolList },
+  },
 };
 
 export default meta;
@@ -18,14 +21,14 @@ type Story = StoryObj<ButtonComponent>;
 export const Primary: Story = {
   args: {
     label: 'Button',
-    rank: 'primary',
-    outline: false,
-    type: 'button',
-    size: 'default',
-    icon: null,
-    iconOnly: false,
-    inProgress: false,
-    disabled: false,
+    // rank: 'primary',
+    // outline: false,
+    // type: 'button',
+    // size: 'default',
+    // icon: null,
+    // iconOnly: false,
+    // inProgress: false,
+    // disabled: false,
   },
 };
 
