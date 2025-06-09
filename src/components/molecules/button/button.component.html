@@ -1,6 +1,12 @@
-<!-- <span
+@if(inProgress){<span
   class="spinner-border spinner-border-sm"
   role="status"
   aria-hidden="true"
-></span> -->
-<span>{{ label }}</span>
+></span
+>} @if (iconName !== 'no_icon'){
+<icon [name]="iconName"></icon>
+} @if(iconOnly){
+<span class="visually-hidden">{{ label }}</span>
+} @else {
+<span>{{ label }}</span
+>}

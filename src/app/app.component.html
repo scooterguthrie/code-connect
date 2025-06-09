@@ -2,16 +2,18 @@
   <h1>Storybook Code Connect Test</h1>
   <h2>Icon Component</h2>
   <ul class="list-unstyled">
-    <li><icon name="search" size="icon-sm"/> Small</li>
-    <li><icon name="search"/>Default</li>
-    <li><icon name="search" size="icon-lg"/>Large</li>
+    <li><icon name="search" size="icon-sm" /> Small</li>
+    <li><icon name="search" />Default</li>
+    <li><icon name="search" size="icon-lg" />Large</li>
   </ul>
   <h2>Button Component</h2>
   <div class="d-grid gap-3 d-md-flex">
-    <button bs-button label="Component Button 01"></button>
     <button
       bs-button
-      label="Component Button 02"
+      [showIcon]="true"
+      [iconName]="'assist_walker'"
+      label="Component Button 01"
     ></button>
+    <button bs-button label="Component Button 02"></button>
   </div>
 </div>

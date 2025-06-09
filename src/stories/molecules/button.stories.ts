@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/angular';
 import { fn } from '@storybook/test';
-
+import symbolList from '../atoms/symbol-list.json';
 import { ButtonComponent } from '../../components/molecules/button/button.component';
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories
@@ -9,6 +9,7 @@ const meta: Meta<ButtonComponent> = {
   component: ButtonComponent,
   tags: ['autodocs'],
   args: { onClick: fn() },
+  argTypes: { iconName: { control: 'select', options: symbolList } },
 };
 
 export default meta;
@@ -21,6 +22,11 @@ export const Primary: Story = {
     rank: 'primary',
     type: 'button',
     size: 'md',
+    iconOnly: false,
+    inProgress: false,
+    disabled: false,
+    outline: false,
+    iconName: 'add_circle',
   },
 };
 
