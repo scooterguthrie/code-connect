@@ -13,7 +13,8 @@
       "molecules": ["src/components/molecules"]
     },
     "documentUrlSubstitutions": {
-      "<FIGMA_BUTTONS_BUTTONS>": "https://www.figma.com/design/ieJsu7PujVZz8gX0Um9QMv/Code-Connect-POC?node-id=64-5"
+      "<FIGMA_BUTTONS_BUTTONS>": "https://www.figma.com/design/ieJsu7PujVZz8gX0Um9QMv/Code-Connect-POC?node-id=64-5",
+      "<FIGMA_ICONS_ICONS>": "https://www.figma.com/design/ieJsu7PujVZz8gX0Um9QMv/Code-Connect-POC?node-id=135-1340"
     }
   }
 }

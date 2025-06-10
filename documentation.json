@@ -9,7 +9,7 @@
     "components": [
         {
             "name": "AppComponent",
-            "id": "component-AppComponent-ce372096a10aa119f1d024e15e9ccfba7fe50ecf96df9e9bfb52054e7d1ee843ba577d67276791a183247114e5d0c20af33f209efa1f61b96255449a6674eb6e",
+            "id": "component-AppComponent-9cad793c9054785e9fa8f5cd8d6b67b53f629af28067a564e914f54865bfd59f2bd3497175b050d420ad4886166c5836dbb798652b17dc360a6142256f4a9723",
             "file": "src/app/app.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -58,17 +58,17 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\r\n//import { RouterOutlet } from '@angular/router';\r\nimport { ButtonComponent } from '../components/molecules/button/button.component';\r\nimport { IconComponent } from '../components/atoms/icon/icon.component';\r\n\r\n@Component({\r\n  selector: 'app-root',\r\n  imports: [ButtonComponent, IconComponent ],\r\n  templateUrl: './app.component.html',\r\n  styleUrl: './app.component.scss'\r\n})\r\nexport class AppComponent {\r\n  title = 'code-connect';\r\n}\r\n",
+            "sourceCode": "import { Component } from '@angular/core';\n//import { RouterOutlet } from '@angular/router';\nimport { ButtonComponent } from '../components/molecules/button/button.component';\nimport { IconComponent } from '../components/atoms/icon/icon.component';\n\n@Component({\n  selector: 'app-root',\n  imports: [ButtonComponent, IconComponent ],\n  templateUrl: './app.component.html',\n  styleUrl: './app.component.scss'\n})\nexport class AppComponent {\n  title = 'code-connect';\n}\n",
             "styleUrl": "./app.component.scss",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
             "extends": [],
-            "templateData": "<div class=\"container-xxl\">\r\n  <h1>Storybook Code Connect Test</h1>\r\n  <h2>Icon Component</h2>\r\n  <ul class=\"list-unstyled\">\r\n    <li><icon name=\"search\" size=\"sm\" /> Small</li>\r\n    <li><icon name=\"search\" />Default</li>\r\n    <li><icon name=\"search\" size=\"lg\" />Large</li>\r\n  </ul>\r\n  <h2>Button Component</h2>\r\n  <div class=\"d-grid gap-3 d-md-flex\">\r\n    <button\r\n      bs-button\r\n      label=\"Component Button 01\"\r\n      icon=\"add\"\r\n    ></button>\r\n    <button bs-button label=\"Component Button 02\"></button>\r\n  </div>\r\n</div>\r\n"
+            "templateData": "<div class=\"container-xxl\">\n  <h1>Storybook Code Connect Test</h1>\n  <h2>Icon Component</h2>\n  <ul class=\"list-unstyled\">\n    <li><icon name=\"account_box\" size=\"sm\" /> Small</li>\n    <li><icon name=\"account_box\" />Default</li>\n    <li><icon name=\"account_box\" size=\"lg\" />Large</li>\n  </ul>\n  <h2>Button Component</h2>\n  <div class=\"d-grid gap-3 d-md-flex\">\n    <button\n      bs-button\n      label=\"Component Button 01\"\n      icon=\"account_box\"\n    ></button>\n    <button bs-button label=\"Component Button 02\"></button>\n  </div>\n</div>\n"
         },
         {
             "name": "ButtonComponent",
-            "id": "component-ButtonComponent-e8ad963fd4d85e6afb27a5fac14eb88b3719a97361bbb1ec490039cbf02e80fbc8a0575eec296970ddfafac819212212d427de5cf150cc18c1637132c2be76d5",
+            "id": "component-ButtonComponent-db572dbffb26c2ed5e51a261cc0c58ceaf13295979164b7f777014727a904f36b39cc890648297a1ada44cb123c8a1561b2d8e016ed4d33bdda1e8070abc7eec",
             "file": "src/components/molecules/button/button.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -90,7 +90,7 @@
                     "defaultValue": "false",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 36,
+                    "line": 44,
                     "type": "boolean",
                     "decorators": []
                 },
@@ -99,8 +99,8 @@
                     "defaultValue": "null",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 33,
-                    "type": "MaterialSymbol | null",
+                    "line": 41,
+                    "type": "null | \"3d_rotation\" | \"accessibility\" | \"accessible\" | \"accessible_forward\" | \"account_box\" | \"account_child\" | \"account_child_invert\" | \"account_circle\" | \"accessibility_new\"",
                     "decorators": []
                 },
                 {
@@ -108,7 +108,7 @@
                     "defaultValue": "false",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 34,
+                    "line": 42,
                     "type": "boolean",
                     "decorators": []
                 },
@@ -117,7 +117,7 @@
                     "defaultValue": "false",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 35,
+                    "line": 43,
                     "type": "boolean",
                     "decorators": []
                 },
@@ -131,21 +131,12 @@
                     "decorators": []
                 },
                 {
-                    "name": "outline",
-                    "defaultValue": "false",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "line": 30,
-                    "type": "boolean",
-                    "decorators": []
-                },
-                {
                     "name": "rank",
                     "defaultValue": "'primary'",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "line": 20,
-                    "type": "\"primary\" | \"secondary\" | \"success\" | \"danger\" | \"warning\" | \"info\" | \"light\" | \"dark\" | \"link\"",
+                    "type": "\"primary\" | \"secondary\" | \"success\" | \"danger\" | \"warning\" | \"info\" | \"light\" | \"dark\" | \"link\" | \"outline-primary\" | \"outline-secondary\" | \"outline-success\" | \"outline-info\" | \"outline-warning\" | \"outline-anger\" | \"outline-light\" | \"outline-dark\"",
                     "decorators": []
                 },
                 {
@@ -153,7 +144,7 @@
                     "defaultValue": "'default'",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 32,
+                    "line": 39,
                     "type": "\"default\" | \"sm\" | \"lg\"",
                     "decorators": []
                 },
@@ -162,7 +153,7 @@
                     "defaultValue": "'button'",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 31,
+                    "line": 38,
                     "type": "\"button\" | \"submit\" | \"reset\"",
                     "decorators": []
                 }
@@ -173,7 +164,7 @@
                     "defaultValue": "new EventEmitter<Event>()",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 38,
+                    "line": 46,
                     "type": "EventEmitter"
                 }
             ],
@@ -197,7 +188,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { CommonModule } from '@angular/common';\r\nimport { Component, Input, Output, EventEmitter } from '@angular/core';\r\nimport { IconComponent } from '../../atoms/icon/icon.component';\r\nimport { MaterialSymbol } from 'material-symbols';\r\n\r\n@Component({\r\n  selector: 'button[bs-button], a[bs-button]',\r\n  standalone: true,\r\n  imports: [CommonModule, IconComponent],\r\n  templateUrl: './button.component.html',\r\n  styleUrl: './button.component.scss',\r\n  host: {\r\n    '[class]': 'classes',\r\n    '[type]': 'type',\r\n    '[attr.aria-disabled]': 'disabled || inProgress',\r\n  },\r\n})\r\nexport class ButtonComponent {\r\n  @Input() label = 'Button';\r\n  @Input() rank?:\r\n    | 'primary'\r\n    | 'secondary'\r\n    | 'success'\r\n    | 'danger'\r\n    | 'warning'\r\n    | 'info'\r\n    | 'light'\r\n    | 'dark'\r\n    | 'link' = 'primary';\r\n  @Input() outline? = false;\r\n  @Input() type?: 'button' | 'submit' | 'reset' = 'button';\r\n  @Input() size: 'default' | 'sm' | 'lg' = 'default';\r\n  @Input() icon: MaterialSymbol | null = null;\r\n  @Input() iconOnly? = false;\r\n  @Input() inProgress? = false;\r\n  @Input() disabled? = false;\r\n\r\n  @Output() onClick = new EventEmitter<Event>();\r\n\r\n  public get classes(): string[] {\r\n    let outlineString = '';\r\n    let disabledString = '';\r\n    if (this.outline) {\r\n      outlineString = 'outline-';\r\n    }\r\n    if (this.disabled || this.inProgress) {\r\n      disabledString = 'disabled';\r\n    }\r\n    return [\r\n      'btn',\r\n      `btn-` + `${outlineString}` + `${this.rank}`,\r\n      `btn-${this.size}`,\r\n      `${disabledString}`,\r\n    ];\r\n  }\r\n}\r\n",
+            "sourceCode": "import { CommonModule } from '@angular/common';\nimport { Component, Input, Output, EventEmitter } from '@angular/core';\nimport { IconComponent } from '../../atoms/icon/icon.component';\n//import { MaterialSymbol } from 'material-symbols';\n\n@Component({\n  selector: 'button[bs-button], a[bs-button]',\n  standalone: true,\n  imports: [CommonModule, IconComponent],\n  templateUrl: './button.component.html',\n  styleUrl: './button.component.scss',\n  host: {\n    '[class]': 'classes',\n    '[type]': 'type',\n    '[attr.aria-disabled]': 'disabled || inProgress',\n  },\n})\nexport class ButtonComponent {\n  @Input() label = 'Button';\n  @Input() rank?:\n    | 'primary'\n    | 'secondary'\n    | 'success'\n    | 'danger'\n    | 'warning'\n    | 'info'\n    | 'light'\n    | 'dark'\n    | 'link' \n    | 'outline-primary'\n    | 'outline-secondary'\n    | 'outline-success'\n    | 'outline-info'\n    | 'outline-warning'\n    | 'outline-anger'\n    | 'outline-light'\n    | 'outline-dark' = 'primary';\n  @Input() type?: 'button' | 'submit' | 'reset' = 'button';\n  @Input() size: 'default' | 'sm' | 'lg' = 'default';\n  //@Input() icon: MaterialSymbol | null = null;\n  @Input() icon: null | '3d_rotation' | 'accessibility' | 'accessible' | 'accessible_forward' | 'account_box' | 'account_child' | 'account_child_invert' | 'account_circle' | 'accessibility_new' = null;\n  @Input() iconOnly? = false;\n  @Input() inProgress? = false;\n  @Input() disabled? = false;\n\n  @Output() onClick = new EventEmitter<Event>();\n\n  public get classes(): string[] {\n    let disabledString = '';\n    if (this.disabled || this.inProgress) {\n      disabledString = 'disabled';\n    }\n    return [\n      'btn',\n      `btn-${this.rank}`,\n      `btn-${this.size}`,\n      `${disabledString}`,\n    ];\n  }\n}\n",
             "styleUrl": "./button.component.scss",
             "assetsDirs": [],
             "styleUrlsData": "",
@@ -210,15 +201,15 @@
                         "name": "classes",
                         "type": "[]",
                         "returnType": "string[]",
-                        "line": 40
+                        "line": 48
                     }
                 }
             },
-            "templateData": "@if(inProgress){<span\r\n  class=\"spinner-border spinner-border-sm\"\r\n  role=\"status\"\r\n  aria-hidden=\"true\"\r\n></span\r\n>} @if (icon !== null){\r\n<icon [name]=\"icon\" [size]=\"size\"></icon>\r\n}\r\n<span class=\"btn-label\" [ngClass]=\"{ 'visually-hidden': iconOnly }\">{{\r\n  label\r\n}}</span>\r\n"
+            "templateData": "@if(inProgress){<span\n  class=\"spinner-border spinner-border-sm\"\n  role=\"status\"\n  aria-hidden=\"true\"\n></span\n>} @if (icon !== null){\n<icon [name]=\"icon\" [size]=\"size\"></icon>\n}\n<span class=\"btn-label\" [ngClass]=\"{ 'visually-hidden': iconOnly }\">{{\n  label\n}}</span>\n"
         },
         {
             "name": "IconComponent",
-            "id": "component-IconComponent-fc6bacfc665993d5f326bc749655ed4be1d12d542cb1af44181d64798a7c185ca60f0b8c59547f203a337b31be38fcbca92649fc45ef6f53fc00c3f08b35adde",
+            "id": "component-IconComponent-8e8d0746b4e662b5aeb7164b4e819881bfc8b244d5e33f6637c9223ff1edf162d0fd66ce13e771bc6c4f6ded178f1cfaa5890fa727f5c8e97868d050853702ef",
             "file": "src/components/atoms/icon/icon.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -237,11 +228,11 @@
             "inputsClass": [
                 {
                     "name": "name",
-                    "defaultValue": "'add_circle'",
+                    "defaultValue": "'account_box'",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 18,
-                    "type": "MaterialSymbol",
+                    "line": 19,
+                    "type": "\"3d_rotation\" | \"accessibility\" | \"accessible\" | \"accessible_forward\" | \"account_box\" | \"account_child\" | \"account_child_invert\" | \"account_circle\" | \"accessibility_new\"",
                     "decorators": []
                 },
                 {
@@ -249,7 +240,7 @@
                     "defaultValue": "'default'",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 19,
+                    "line": 20,
                     "type": "\"default\" | \"sm\" | \"lg\"",
                     "decorators": []
                 }
@@ -271,7 +262,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { CommonModule } from '@angular/common';\r\nimport { Component, Input } from '@angular/core';\r\nimport type { MaterialSymbol } from 'material-symbols';\r\n\r\n@Component({\r\n  selector: 'icon',\r\n  imports: [CommonModule],\r\n  standalone: true,\r\n  templateUrl: './icon.component.html',\r\n  styleUrl: './icon.component.scss',\r\n  host: {\r\n    class: 'material-symbols-rounded',\r\n    '[class]': 'classes',\r\n    '[attr.aria-hidden]': 'true',\r\n  },\r\n})\r\nexport class IconComponent {\r\n  @Input() name: MaterialSymbol = 'add_circle';\r\n  @Input() size: 'default' | 'sm' | 'lg' = 'default';\r\n\r\n  public get classes(): string[] {\r\n    return ['material-symbols-rounded', `icon-${this.size}`,]\r\n  }\r\n}\r\n",
+            "sourceCode": "import { CommonModule } from '@angular/common';\nimport { Component, Input } from '@angular/core';\n//import type { MaterialSymbol } from 'material-symbols';\n\n@Component({\n  selector: 'icon',\n  imports: [CommonModule],\n  standalone: true,\n  templateUrl: './icon.component.html',\n  styleUrl: './icon.component.scss',\n  host: {\n    class: 'material-symbols-rounded',\n    '[class]': 'classes',\n    '[attr.aria-hidden]': 'true',\n  },\n})\nexport class IconComponent {\n  //@Input() name: MaterialSymbol = 'add_circle';\n  @Input() name: '3d_rotation' | 'accessibility' | 'accessible' | 'accessible_forward' | 'account_box' | 'account_child' | 'account_child_invert' | 'account_circle' | 'accessibility_new' = 'account_box';\n  @Input() size: 'default' | 'sm' | 'lg' = 'default';\n\n  public get classes(): string[] {\n    return ['material-symbols-rounded', `icon-${this.size}`,]\n  }\n}\n",
             "styleUrl": "./icon.component.scss",
             "assetsDirs": [],
             "styleUrlsData": "",
@@ -284,7 +275,7 @@
                         "name": "classes",
                         "type": "[]",
                         "returnType": "string[]",
-                        "line": 21
+                        "line": 22
                     }
                 }
             },
@@ -365,7 +356,7 @@
                 "linktype": "component",
                 "name": "ButtonComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/11",
+                "coverageCount": "0/10",
                 "status": "low"
             }
         ]

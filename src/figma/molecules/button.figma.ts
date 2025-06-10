@@ -11,6 +11,8 @@ import figma, { html } from '@figma/code-connect/html';
 figma.connect('<FIGMA_BUTTONS_BUTTONS>', {
   props: {
     label: figma.string('Label'),
+    showIcon: figma.boolean('Show Icon'),
+    icon: figma.instance('Icon'),
     rank: figma.enum('Rank', {
       Primary: 'primary',
       Secondary: 'secondary',
@@ -21,17 +23,30 @@ figma.connect('<FIGMA_BUTTONS_BUTTONS>', {
       Light: 'light',
       Dark: 'dark',
       Link: 'link',
+      'Outline Primary': 'outline-primary',
+      'Outline Secondary': 'outline-secondary',
+      'Outline Success': 'outline-success',
+      'Outline Info': 'outline-info',
+      'Outline Warning': 'outline-warning',
+      'Outline Danger': 'outline-danger',
+      'Outline Light': 'outline-light',
+      'Outline Dark': 'outline-dark',
     }),
     size: figma.enum('Size', {
       Default: 'default',
       Small: 'small',
       Large: 'large',
     }),
+    state: figma.enum('State', {
+      Default: 'default',
+      Disabled: 'disabled',
+    }),
   },
-  example: (props) => html`<bs-button
+  example: (props) => html`<button
+    bs-button
     label=${props.label}
-    type="button"
     rank=${props.rank}
     size=${props.size}
-  ></bs-button>`,
+    icon=${props.icon}
+  ></button>`,
 });
