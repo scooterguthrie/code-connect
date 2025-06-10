@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
-//import type { MaterialSymbol } from 'material-symbols';
+import type { MaterialSymbol } from 'material-symbols';
 
 @Component({
   selector: 'icon',
@@ -15,8 +15,7 @@ import { Component, Input } from '@angular/core';
   },
 })
 export class IconComponent {
-  //@Input() name: MaterialSymbol = 'add_circle';
-  @Input() name: '3d_rotation' | 'accessibility' | 'accessible' | 'accessible_forward' | 'account_box' | 'account_child' | 'account_child_invert' | 'account_circle' | 'accessibility_new' = 'account_box';
+  @Input() name: MaterialSymbol = 'add_circle';
   @Input() size: 'default' | 'sm' | 'lg' = 'default';
 
   public get classes(): string[] {

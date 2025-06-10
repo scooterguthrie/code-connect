@@ -9,9 +9,9 @@ const meta: Meta<ButtonComponent> = {
   component: ButtonComponent,
   tags: ['autodocs'],
   args: { onClick: fn() },
-  // argTypes: {
-  //   icon: { control: 'select', options: symbolList },
-  // },
+  argTypes: {
+    icon: { control: 'select', options: symbolList },
+  },
 };
 
 export default meta;

@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { IconComponent } from '../../atoms/icon/icon.component';
-//import { MaterialSymbol } from 'material-symbols';
+import { MaterialSymbol } from 'material-symbols';
 
 @Component({
   selector: 'button[bs-button], a[bs-button]',
@@ -37,8 +37,7 @@ export class ButtonComponent {
     | 'outline-dark' = 'primary';
   @Input() type?: 'button' | 'submit' | 'reset' = 'button';
   @Input() size: 'default' | 'sm' | 'lg' = 'default';
-  //@Input() icon: MaterialSymbol | null = null;
-  @Input() icon: null | '3d_rotation' | 'accessibility' | 'accessible' | 'accessible_forward' | 'account_box' | 'account_child' | 'account_child_invert' | 'account_circle' | 'accessibility_new' = null;
+  @Input() icon: MaterialSymbol | null = null;
   @Input() iconOnly? = false;
   @Input() inProgress? = false;
   @Input() disabled? = false;

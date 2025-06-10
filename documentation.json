@@ -68,7 +68,7 @@
         },
         {
             "name": "ButtonComponent",
-            "id": "component-ButtonComponent-db572dbffb26c2ed5e51a261cc0c58ceaf13295979164b7f777014727a904f36b39cc890648297a1ada44cb123c8a1561b2d8e016ed4d33bdda1e8070abc7eec",
+            "id": "component-ButtonComponent-3c63e8e332386fcb02594e1ccc274ca828cbb5b1606a024897adad03cd6a017a245a12098d8bd71632118dcaecec323c21b1370ff36af7f1622f8ec11796dbe3",
             "file": "src/components/molecules/button/button.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -90,7 +90,7 @@
                     "defaultValue": "false",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 44,
+                    "line": 43,
                     "type": "boolean",
                     "decorators": []
                 },
@@ -99,8 +99,8 @@
                     "defaultValue": "null",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 41,
-                    "type": "null | \"3d_rotation\" | \"accessibility\" | \"accessible\" | \"accessible_forward\" | \"account_box\" | \"account_child\" | \"account_child_invert\" | \"account_circle\" | \"accessibility_new\"",
+                    "line": 40,
+                    "type": "MaterialSymbol | null",
                     "decorators": []
                 },
                 {
@@ -108,7 +108,7 @@
                     "defaultValue": "false",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 42,
+                    "line": 41,
                     "type": "boolean",
                     "decorators": []
                 },
@@ -117,7 +117,7 @@
                     "defaultValue": "false",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 43,
+                    "line": 42,
                     "type": "boolean",
                     "decorators": []
                 },
@@ -164,7 +164,7 @@
                     "defaultValue": "new EventEmitter<Event>()",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 46,
+                    "line": 45,
                     "type": "EventEmitter"
                 }
             ],
@@ -188,7 +188,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { CommonModule } from '@angular/common';\nimport { Component, Input, Output, EventEmitter } from '@angular/core';\nimport { IconComponent } from '../../atoms/icon/icon.component';\n//import { MaterialSymbol } from 'material-symbols';\n\n@Component({\n  selector: 'button[bs-button], a[bs-button]',\n  standalone: true,\n  imports: [CommonModule, IconComponent],\n  templateUrl: './button.component.html',\n  styleUrl: './button.component.scss',\n  host: {\n    '[class]': 'classes',\n    '[type]': 'type',\n    '[attr.aria-disabled]': 'disabled || inProgress',\n  },\n})\nexport class ButtonComponent {\n  @Input() label = 'Button';\n  @Input() rank?:\n    | 'primary'\n    | 'secondary'\n    | 'success'\n    | 'danger'\n    | 'warning'\n    | 'info'\n    | 'light'\n    | 'dark'\n    | 'link' \n    | 'outline-primary'\n    | 'outline-secondary'\n    | 'outline-success'\n    | 'outline-info'\n    | 'outline-warning'\n    | 'outline-anger'\n    | 'outline-light'\n    | 'outline-dark' = 'primary';\n  @Input() type?: 'button' | 'submit' | 'reset' = 'button';\n  @Input() size: 'default' | 'sm' | 'lg' = 'default';\n  //@Input() icon: MaterialSymbol | null = null;\n  @Input() icon: null | '3d_rotation' | 'accessibility' | 'accessible' | 'accessible_forward' | 'account_box' | 'account_child' | 'account_child_invert' | 'account_circle' | 'accessibility_new' = null;\n  @Input() iconOnly? = false;\n  @Input() inProgress? = false;\n  @Input() disabled? = false;\n\n  @Output() onClick = new EventEmitter<Event>();\n\n  public get classes(): string[] {\n    let disabledString = '';\n    if (this.disabled || this.inProgress) {\n      disabledString = 'disabled';\n    }\n    return [\n      'btn',\n      `btn-${this.rank}`,\n      `btn-${this.size}`,\n      `${disabledString}`,\n    ];\n  }\n}\n",
+            "sourceCode": "import { CommonModule } from '@angular/common';\nimport { Component, Input, Output, EventEmitter } from '@angular/core';\nimport { IconComponent } from '../../atoms/icon/icon.component';\nimport { MaterialSymbol } from 'material-symbols';\n\n@Component({\n  selector: 'button[bs-button], a[bs-button]',\n  standalone: true,\n  imports: [CommonModule, IconComponent],\n  templateUrl: './button.component.html',\n  styleUrl: './button.component.scss',\n  host: {\n    '[class]': 'classes',\n    '[type]': 'type',\n    '[attr.aria-disabled]': 'disabled || inProgress',\n  },\n})\nexport class ButtonComponent {\n  @Input() label = 'Button';\n  @Input() rank?:\n    | 'primary'\n    | 'secondary'\n    | 'success'\n    | 'danger'\n    | 'warning'\n    | 'info'\n    | 'light'\n    | 'dark'\n    | 'link' \n    | 'outline-primary'\n    | 'outline-secondary'\n    | 'outline-success'\n    | 'outline-info'\n    | 'outline-warning'\n    | 'outline-anger'\n    | 'outline-light'\n    | 'outline-dark' = 'primary';\n  @Input() type?: 'button' | 'submit' | 'reset' = 'button';\n  @Input() size: 'default' | 'sm' | 'lg' = 'default';\n  @Input() icon: MaterialSymbol | null = null;\n  @Input() iconOnly? = false;\n  @Input() inProgress? = false;\n  @Input() disabled? = false;\n\n  @Output() onClick = new EventEmitter<Event>();\n\n  public get classes(): string[] {\n    let disabledString = '';\n    if (this.disabled || this.inProgress) {\n      disabledString = 'disabled';\n    }\n    return [\n      'btn',\n      `btn-${this.rank}`,\n      `btn-${this.size}`,\n      `${disabledString}`,\n    ];\n  }\n}\n",
             "styleUrl": "./button.component.scss",
             "assetsDirs": [],
             "styleUrlsData": "",
@@ -201,7 +201,7 @@
                         "name": "classes",
                         "type": "[]",
                         "returnType": "string[]",
-                        "line": 48
+                        "line": 47
                     }
                 }
             },
@@ -209,7 +209,7 @@
         },
         {
             "name": "IconComponent",
-            "id": "component-IconComponent-8e8d0746b4e662b5aeb7164b4e819881bfc8b244d5e33f6637c9223ff1edf162d0fd66ce13e771bc6c4f6ded178f1cfaa5890fa727f5c8e97868d050853702ef",
+            "id": "component-IconComponent-6509f378b55bbc63ff503daa7798dc0a2a54f8dc5efb6e8ade33239f4c878e85a2e8ef04ac04c31743680e9b18a8a8a395e752b82bb6348f81672ba8c2beeb3a",
             "file": "src/components/atoms/icon/icon.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -228,11 +228,11 @@
             "inputsClass": [
                 {
                     "name": "name",
-                    "defaultValue": "'account_box'",
+                    "defaultValue": "'add_circle'",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 19,
-                    "type": "\"3d_rotation\" | \"accessibility\" | \"accessible\" | \"accessible_forward\" | \"account_box\" | \"account_child\" | \"account_child_invert\" | \"account_circle\" | \"accessibility_new\"",
+                    "line": 18,
+                    "type": "MaterialSymbol",
                     "decorators": []
                 },
                 {
@@ -240,7 +240,7 @@
                     "defaultValue": "'default'",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 20,
+                    "line": 19,
                     "type": "\"default\" | \"sm\" | \"lg\"",
                     "decorators": []
                 }
@@ -262,7 +262,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { CommonModule } from '@angular/common';\nimport { Component, Input } from '@angular/core';\n//import type { MaterialSymbol } from 'material-symbols';\n\n@Component({\n  selector: 'icon',\n  imports: [CommonModule],\n  standalone: true,\n  templateUrl: './icon.component.html',\n  styleUrl: './icon.component.scss',\n  host: {\n    class: 'material-symbols-rounded',\n    '[class]': 'classes',\n    '[attr.aria-hidden]': 'true',\n  },\n})\nexport class IconComponent {\n  //@Input() name: MaterialSymbol = 'add_circle';\n  @Input() name: '3d_rotation' | 'accessibility' | 'accessible' | 'accessible_forward' | 'account_box' | 'account_child' | 'account_child_invert' | 'account_circle' | 'accessibility_new' = 'account_box';\n  @Input() size: 'default' | 'sm' | 'lg' = 'default';\n\n  public get classes(): string[] {\n    return ['material-symbols-rounded', `icon-${this.size}`,]\n  }\n}\n",
+            "sourceCode": "import { CommonModule } from '@angular/common';\nimport { Component, Input } from '@angular/core';\nimport type { MaterialSymbol } from 'material-symbols';\n\n@Component({\n  selector: 'icon',\n  imports: [CommonModule],\n  standalone: true,\n  templateUrl: './icon.component.html',\n  styleUrl: './icon.component.scss',\n  host: {\n    class: 'material-symbols-rounded',\n    '[class]': 'classes',\n    '[attr.aria-hidden]': 'true',\n  },\n})\nexport class IconComponent {\n  @Input() name: MaterialSymbol = 'add_circle';\n  @Input() size: 'default' | 'sm' | 'lg' = 'default';\n\n  public get classes(): string[] {\n    return ['material-symbols-rounded', `icon-${this.size}`,]\n  }\n}\n",
             "styleUrl": "./icon.component.scss",
             "assetsDirs": [],
             "styleUrlsData": "",
@@ -275,7 +275,7 @@
                         "name": "classes",
                         "type": "[]",
                         "returnType": "string[]",
-                        "line": 22
+                        "line": 21
                     }
                 }
             },
