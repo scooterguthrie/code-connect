@@ -15,15 +15,15 @@ figma.connect('<FIGMA_BUTTONS_BUTTONS>', {
     showIcon: figma.boolean('Show Icon'),
     icon: figma.nestedProps('Icon', {
       name: figma.enum('Name', {
-        '3d Rotation': '3d-rotation',
+        '3d Rotation': '3d_rotation',
         Accessibility: 'accessibility',
         Accessible: 'accessible',
-        'Accessible Forward': 'accessible-forward',
-        'Account Box': 'account-box',
-        'Account Child': 'account-child',
-        'Account Child Invert': 'account-child-invert',
-        'Account Circle': 'account-circle',
-        'Accessibility New': 'accessibility-new',
+        'Accessible Forward': 'accessible_forward',
+        'Account Box': 'account_box',
+        'Account Child': 'account_child',
+        'Account Child Invert': 'account_child_invert',
+        'Account Circle': 'account_circle',
+        'Accessibility New': 'accessibility_new',
       }),
     }),
     rank: figma.enum('Rank', {

@@ -11,15 +11,15 @@ import figma, { html } from '@figma/code-connect/html';
 figma.connect('<FIGMA_ICONS_ICONS>', {
   props: {
     name: figma.enum('Name', {
-      '3d Rotation': '3d-rotation',
+      '3d Rotation': '3d_rotation',
       Accessibility: 'accessibility',
       Accessible: 'accessible',
-      'Accessible Forward': 'accessible-forward',
-      'Account Box': 'account-box',
-      'Account Child': 'account-child',
-      'Account Child Invert': 'account-child-invert',
-      'Account Circle': 'account-circle',
-      'Accessibility New': 'accessibility-new',
+      'Accessible Forward': 'accessible_forward',
+      'Account Box': 'account_box',
+      'Account Child': 'account_child',
+      'Account Child Invert': 'account_child_invert',
+      'Account Circle': 'account_circle',
+      'Accessibility New': 'accessibility_new',
     }),
   },
   example: (props) => html`<icon name=${props.name} />`,
