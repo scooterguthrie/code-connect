@@ -1,0 +1,11 @@
+@if(inProgress){<span
+  class="spinner-border spinner-border-sm"
+  role="status"
+  aria-hidden="true"
+></span
+>} @if (icon !== null){
+<icon [name]="icon" [size]="size"></icon>
+}
+<span class="btn-label" [ngClass]="{ 'visually-hidden': iconOnly }">{{
+  label
+}}</span>

@@ -1,0 +1,11 @@
+.material-symbols-rounded {
+  & + .btn-label {
+    margin-left: 0.25rem;
+  }
+  &.icon-sm + .btn-label {
+    margin-left: 0.125rem;
+  }
+    &.icon-lg + .btn-label {
+    margin-left: 0.5rem;
+  }
+}
